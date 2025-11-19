@@ -35,6 +35,7 @@ get_header();
     }
     .hero-animation-shell {
         min-height: 260px;
+        background: #0f172a;
     }
     .feature-card {
         width: 180px;
@@ -109,7 +110,7 @@ get_header();
                             <span class="border rounded-pill px-3 py-1">Timezone aware</span>
                         </div>
 
-                        <div class="position-relative border rounded-3 p-3 bg-white bg-opacity-75 shadow-sm hero-animation-shell">
+                        <div class="position-relative border rounded-3 p-3 shadow-sm hero-animation-shell">
                             <div class="ratio ratio-16x9 w-100">
                                 <!-- Animation concept for Webmakerr hero explainer:
                                      Frame 1 (0-1s) – Minimal dashboard cards titled Leads, Bookings, Sales, Automations fade/slide in.
@@ -119,7 +120,7 @@ get_header();
                                      Style: flat enterprise UI, white/black palette with #01C468 accents, rounded 4-8px corners, soft shadows. -->
                                 <lottie-player
                                     src="<?php echo esc_url( $theme_dir . '/assets/animations/hero-explainer.json' ); ?>"
-                                    background="transparent"
+                                    background="#0f172a"
                                     speed="1"
                                     class="w-100 h-100"
                                     loop
@@ -129,7 +130,6 @@ get_header();
                             </div>
                         </div>
                     </div>
-                    <div class="position-absolute inset-0 bg-white bg-opacity-75" style="pointer-events:none;"></div>
                 </div>
             </div>
         </div>
