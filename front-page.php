@@ -20,17 +20,27 @@ get_header();
 
 <script>
     (function() {
-        var ua = navigator.userAgent || navigator.vendor || window.opera;
-        var isInAppBrowser = /FBAN|FBAV|Instagram/i.test(ua);
+        var ua = (navigator.userAgent || navigator.vendor || window.opera || '').toLowerCase();
+        var isFacebookInApp = /fbav|fban|fb_iab|fbiab|fbbv|fbios|fb4a/i.test(ua);
+        var isInstagramInApp = /instagram/i.test(ua);
+        var isInAppBrowser = isFacebookInApp || isInstagramInApp;
 
         if (isInAppBrowser) {
             document.documentElement.classList.add('is-inapp-browser');
+            if (isFacebookInApp) {
+                document.documentElement.classList.add('is-facebook-inapp');
+            }
+
             if (document.body) {
                 document.body.classList.add('is-inapp-browser');
+                if (isFacebookInApp) {
+                    document.body.classList.add('is-facebook-inapp');
+                }
             }
 
             var headEl = document.head || document.getElementsByTagName('head')[0];
             var existingStylesheet = document.querySelector('link[href*="/assets/css/header-modern.css"]');
+            var stylesheetHref = '<?php echo esc_url( $theme_dir . '/assets/css/header-modern.css' ); ?>';
 
             var ensureStylesheet = function(stylesheet) {
                 if (!stylesheet) {
@@ -46,9 +56,16 @@ get_header();
                 var inAppStylesheet = document.createElement('link');
                 inAppStylesheet.rel = 'stylesheet';
                 inAppStylesheet.media = 'all';
-                inAppStylesheet.href = '<?php echo esc_url( $theme_dir . '/assets/css/header-modern.css' ); ?>?inapp=1';
+                inAppStylesheet.href = stylesheetHref + (isFacebookInApp ? '?fb-inapp=1' : '?inapp=1');
                 inAppStylesheet.id = 'codex-offcanvas-inapp-style';
                 headEl.appendChild(inAppStylesheet);
+            } else if (isFacebookInApp && headEl && existingStylesheet) {
+                // Facebook's in-app browser intermittently strips stylesheet attributes; reinforce them and bypass caching.
+                ensureStylesheet(existingStylesheet);
+                if (!existingStylesheet.dataset.fbInapp) {
+                    existingStylesheet.dataset.fbInapp = '1';
+                    existingStylesheet.href = stylesheetHref + '?fb-inapp=1';
+                }
             }
         }
     })();

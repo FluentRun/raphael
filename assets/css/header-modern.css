@@ -308,7 +308,8 @@ body.codex-offcanvas-open {
 
 
 
-.is-inapp-browser .codex-offcanvas {
+.is-inapp-browser .codex-offcanvas,
+.is-facebook-inapp .codex-offcanvas {
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
     font-size: 1rem;
@@ -321,7 +322,8 @@ body.codex-offcanvas-open {
     color: var(--codex-dark);
 }
 
-.is-inapp-browser .codex-offcanvas-logo img {
+.is-inapp-browser .codex-offcanvas-logo img,
+.is-facebook-inapp .codex-offcanvas-logo img {
     max-height: 48px;
     width: auto;
 }
@@ -329,26 +331,38 @@ body.codex-offcanvas-open {
 .is-inapp-browser .codex-offcanvas-links > li > a,
 .is-inapp-browser .codex-offcanvas .codex-offcanvas-card-content a,
 .is-inapp-browser .codex-offcanvas .codex-offcanvas-card-content .btn,
-.is-inapp-browser .codex-offcanvas .codex-offcanvas-card-content .cart a {
+.is-inapp-browser .codex-offcanvas .codex-offcanvas-card-content .cart a,
+.is-facebook-inapp .codex-offcanvas-links > li > a,
+.is-facebook-inapp .codex-offcanvas .codex-offcanvas-card-content a,
+.is-facebook-inapp .codex-offcanvas .codex-offcanvas-card-content .btn,
+.is-facebook-inapp .codex-offcanvas .codex-offcanvas-card-content .cart a {
     align-items: center;
     gap: 0.5rem;
 }
 
 .is-inapp-browser .codex-offcanvas-links > li > a svg,
 .is-inapp-browser .codex-offcanvas-meta svg,
-.is-inapp-browser .codex-offcanvas .cart__icon svg {
+.is-inapp-browser .codex-offcanvas .cart__icon svg,
+.is-facebook-inapp .codex-offcanvas-links > li > a svg,
+.is-facebook-inapp .codex-offcanvas-meta svg,
+.is-facebook-inapp .codex-offcanvas .cart__icon svg {
     width: 20px;
     height: 20px;
 }
 
 .is-inapp-browser .codex-offcanvas-header,
-.is-inapp-browser .codex-offcanvas-body {
+.is-inapp-browser .codex-offcanvas-body,
+.is-facebook-inapp .codex-offcanvas-header,
+.is-facebook-inapp .codex-offcanvas-body {
     padding: 1.5rem;
 }
 
 .is-inapp-browser .codex-offcanvas-section,
 .is-inapp-browser .codex-offcanvas-nav,
-.is-inapp-browser .codex-offcanvas-card {
+.is-inapp-browser .codex-offcanvas-card,
+.is-facebook-inapp .codex-offcanvas-section,
+.is-facebook-inapp .codex-offcanvas-nav,
+.is-facebook-inapp .codex-offcanvas-card {
     padding: 1.25rem;
 }
 
@@ -646,7 +660,9 @@ body.codex-offcanvas-open {
     }
 
     .is-inapp-browser .codex-offcanvas-header,
-    .is-inapp-browser .codex-offcanvas-body {
+    .is-inapp-browser .codex-offcanvas-body,
+    .is-facebook-inapp .codex-offcanvas-header,
+    .is-facebook-inapp .codex-offcanvas-body {
         padding: 1.25rem;
     }
 
@@ -658,7 +674,10 @@ body.codex-offcanvas-open {
 
     .is-inapp-browser .codex-offcanvas-section,
     .is-inapp-browser .codex-offcanvas-nav,
-    .is-inapp-browser .codex-offcanvas-card {
+    .is-inapp-browser .codex-offcanvas-card,
+    .is-facebook-inapp .codex-offcanvas-section,
+    .is-facebook-inapp .codex-offcanvas-nav,
+    .is-facebook-inapp .codex-offcanvas-card {
         padding: 1rem;
     }
 
