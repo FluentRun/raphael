@@ -111,7 +111,9 @@ if( is_admin() ) {
 function adstm_lang_init() {
     load_theme_textdomain( 'elgreco' );
 }
-add_action( 'init', 'adstm_lang_init' );
+// Load the theme textdomain as early as possible to avoid triggering just-in-time
+// translation loading before the "init" hook has fired.
+add_action( 'after_setup_theme', 'adstm_lang_init' );
 
 /**
  * Add theme support for Featured Images
