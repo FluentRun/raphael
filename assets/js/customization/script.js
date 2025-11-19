@@ -596,15 +596,22 @@ jQuery(function($){
                 url:ajaxurl,
                 data:data,
                 type:'POST',
-                success:function(data){
+                dataType:'json',
+                success:function(response){
+                    const message = response?.data?.message || response?.message || '';
                     $('.mode_btn').removeClass('active');
                     $('.mode_btn_1').addClass('active');
                     $('.curr_mode').html($('.curr_mode').attr('data-classic'));
-                    $('.live_cstm_message').html(data.message).show();
-                    setTimeout(function () {
-                        $('.live_cstm_message').hide().html('');
-                    },5000);
+                    if(message){
+                        $('.live_cstm_message').html(message).show();
+                        setTimeout(function () {
+                            $('.live_cstm_message').hide().html('');
+                        },5000);
+                    }
 
+                },
+                error: function(){
+                    $('.live_cstm_message').html('Demo content could not be applied. Please try again.').show();
                 }
             });
 
@@ -620,15 +627,22 @@ jQuery(function($){
                 url:ajaxurl,
                 data:data,
                 type:'POST',
-                success:function(data){
+                dataType:'json',
+                success:function(response){
+                    const message = response?.data?.message || response?.message || '';
                     $('.mode_btn').removeClass('active');
                     $('.mode_btn_2').addClass('active');
                     $('.curr_mode').html($('.curr_mode').attr('data-sellvia'));
-                    $('.live_cstm_message').html(data.message).show();
-                    setTimeout(function () {
-                        $('.live_cstm_message').hide().html('');
-                    },5000);
+                    if(message){
+                        $('.live_cstm_message').html(message).show();
+                        setTimeout(function () {
+                            $('.live_cstm_message').hide().html('');
+                        },5000);
+                    }
 
+                },
+                error: function(){
+                    $('.live_cstm_message').html('Demo content could not be applied. Please try again.').show();
                 }
             });
 
