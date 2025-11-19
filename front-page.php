@@ -13,30 +13,28 @@ wp_enqueue_script(
     true
 );
 
+wp_enqueue_script(
+    'lottie-player',
+    'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js',
+    [],
+    null,
+    true
+);
+
 $theme_dir = get_template_directory_uri();
 
 get_header();
 ?>
 
 <style>
-    .booking-panel {
-        opacity: 0;
-        transform: translateY(16px) scale(0.985);
-        transition: all 700ms cubic-bezier(0.16, 1, 0.3, 1);
-        pointer-events: none;
-        position: absolute;
-        inset: 0;
-    }
-    .booking-panel.is-active {
-        opacity: 1;
-        transform: translateY(0) scale(1);
-        pointer-events: auto;
-    }
     .booking-ambient {
         background:
             radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.08), transparent 45%),
             radial-gradient(circle at 80% 0%, rgba(167, 139, 250, 0.08), transparent 35%),
             radial-gradient(circle at 50% 80%, rgba(16, 185, 129, 0.08), transparent 40%);
+    }
+    .hero-animation-shell {
+        min-height: 260px;
     }
     .feature-card {
         width: 180px;
@@ -111,62 +109,23 @@ get_header();
                             <span class="border rounded-pill px-3 py-1">Timezone aware</span>
                         </div>
 
-                        <div class="position-relative border rounded-3 p-3 bg-white bg-opacity-75 shadow-sm" style="min-height:260px;">
-                            <div class="booking-panel is-active" data-booking-state="calendar">
-                                <div class="d-flex justify-content-between mb-3">
-                                    <div>
-                                        <p class="text-uppercase small text-muted">Availability</p>
-                                        <p class="fw-semibold fs-5 text-dark">May 2025</p>
-                                    </div>
-                                    <div class="d-flex gap-2">
-                                        <button class="btn btn-sm border rounded-circle" aria-label="Previous">&lsaquo;</button>
-                                        <button class="btn btn-sm border rounded-circle" aria-label="Next">&rsaquo;</button>
-                                    </div>
-                                </div>
-
-                                <div class="row text-center small text-muted mb-2">
-                                    <div class="col">SUN</div>
-                                    <div class="col">MON</div>
-                                    <div class="col">TUE</div>
-                                    <div class="col">WED</div>
-                                    <div class="col">THU</div>
-                                    <div class="col">FRI</div>
-                                    <div class="col">SAT</div>
-                                </div>
-
-                                <div class="row g-2 text-center">
-                                    <div class="col opacity-25 py-2"></div>
-                                    <div class="col opacity-25 py-2"></div>
-                                    <div class="col opacity-25 py-2"></div>
-                                    <div class="col bg-light rounded py-2">1</div>
-                                    <div class="col bg-light rounded py-2">2</div>
-                                    <div class="col opacity-25 py-2"></div>
-                                    <div class="col opacity-25 py-2"></div>
-
-                                    <div class="col bg-light py-2 rounded">5</div>
-                                    <div class="col bg-light py-2 rounded">6</div>
-                                    <div class="col bg-dark text-white fw-bold rounded py-2 shadow">7</div>
-                                    <div class="col bg-light py-2 rounded">8</div>
-                                    <div class="col bg-light py-2 rounded">9</div>
-                                    <div class="col opacity-25 py-2"></div>
-                                    <div class="col opacity-25 py-2"></div>
-
-                                    <div class="col py-2">12</div>
-                                    <div class="col py-2">13</div>
-                                    <div class="col py-2">14</div>
-                                    <div class="col bg-light rounded py-2">15</div>
-                                    <div class="col bg-light rounded py-2">16</div>
-                                    <div class="col opacity-25 py-2"></div>
-                                    <div class="col opacity-25 py-2"></div>
-
-                                    <div class="col bg-light py-2 rounded">19</div>
-                                    <div class="col bg-light py-2 rounded">20</div>
-                                    <div class="col bg-light py-2 rounded">21</div>
-                                    <div class="col bg-light py-2 rounded">22</div>
-                                    <div class="col bg-light py-2 rounded">23</div>
-                                    <div class="col opacity-25 py-2"></div>
-                                    <div class="col opacity-25 py-2"></div>
-                                </div>
+                        <div class="position-relative border rounded-3 p-3 bg-white bg-opacity-75 shadow-sm hero-animation-shell">
+                            <div class="ratio ratio-16x9 w-100">
+                                <!-- Animation concept for Webmakerr hero explainer:
+                                     Frame 1 (0-1s) – Minimal dashboard cards titled Leads, Bookings, Sales, Automations fade/slide in.
+                                     Frame 2 (1-2s) – Clean checkout card reveals fast amount + CTA button interaction.
+                                     Frame 3 (2-3s) – Flowing dotted lines connect Dashboard → Checkout → CRM → Email → Calendar.
+                                     Frame 4 (3-4s) – Cards align into a unified grid, pulse effect, text "One connected system." appears.
+                                     Style: flat enterprise UI, white/black palette with #01C468 accents, rounded 4-8px corners, soft shadows. -->
+                                <lottie-player
+                                    src="<?php echo esc_url( $theme_dir . '/assets/animations/hero-explainer.json' ); ?>"
+                                    background="transparent"
+                                    speed="1"
+                                    class="w-100 h-100"
+                                    loop
+                                    autoplay
+                                    aria-label="Webmakerr hero automation explainer animation">
+                                </lottie-player>
                             </div>
                         </div>
                     </div>
