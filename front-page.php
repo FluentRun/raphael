@@ -31,6 +31,20 @@ get_header();
 </script>
 
 <style>
+    /* Ensure the mobile side menu logo renders consistently across browsers */
+    .codex-offcanvas-logo img {
+        display: block;
+        max-height: 44px;
+        max-width: 180px;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .is-inapp-browser .codex-offcanvas-logo img {
+        max-height: 44px;
+    }
+
     .booking-ambient {
         background:
             radial-gradient(circle at 20% 20%, rgba(96, 165, 250, 0.08), transparent 45%),
