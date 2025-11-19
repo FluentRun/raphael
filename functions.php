@@ -7,11 +7,13 @@ if (function_exists('init_cz')) {
 
 add_action( 'template_redirect', function(){
 
-    if ( defined( 'ADS_ERROR' ) || defined( 'SLV_ERROR' )  ) {
-        return;
+    if (
+        ( defined( 'ADS_ERROR' ) && ADS_ERROR ) ||
+        ( defined( 'SLV_ERROR' ) && SLV_ERROR )
+    ) {
+        get_template_part( 'empty' );
+        exit;
     }
-
-    get_template_part( 'empty' );
 }, 1 );
 
 remove_action('wp_head', 'wp_print_scripts');
