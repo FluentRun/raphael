@@ -74,7 +74,6 @@
     $cta_text = trim( cz('tp_header_cta_text') );
     $cta_link = trim( cz('tp_header_cta_link') );
     $cta_target = cz('tp_header_cta_target') ? ' target="_blank" rel="noopener"' : '';
-    $top_message = cz('tp_text_top_header');
     $account_url = adstm_home_url('/account/');
 
     $desktop_menu = wp_nav_menu([
@@ -129,26 +128,6 @@
 </div>
 
 <header class="codex-header position-sticky top-0 w-100 bg-white">
-    <div class="codex-top-bar border-bottom">
-        <div class="container-xl d-flex flex-wrap align-items-center gap-3 py-2">
-            <div class="codex-top-message d-flex align-items-center gap-2 text-muted small">
-                <?php if($top_message){
-                    do_action('adstm_shipping_icon');
-                    echo wp_kses_post($top_message);
-                } ?>
-            </div>
-            <div class="codex-top-right d-flex align-items-center gap-3 ms-auto">
-                <?php if(cz('tp_currency_switcher')){ ?>
-                    <div class="codex-currency-switcher">
-                        <?php do_action('adstm_dropdown_currency'); ?>
-                    </div>
-                <?php } ?>
-                <div class="codex-top-account d-none d-lg-flex align-items-center gap-1">
-                    <?php do_action('adstm_loginButton'); ?>
-                </div>
-            </div>
-        </div>
-    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-xl d-flex align-items-center gap-3">
             <div class="codex-brand flex-shrink-0">
@@ -167,6 +146,11 @@
                 ?>
             </div>
             <div class="codex-header-icons d-none d-lg-flex align-items-center gap-2 ms-auto">
+                <?php if(cz('tp_currency_switcher')){ ?>
+                    <div class="codex-currency-switcher">
+                        <?php do_action('adstm_dropdown_currency'); ?>
+                    </div>
+                <?php } ?>
                 <button class="btn btn-outline-secondary btn-icon" type="button" data-bs-toggle="collapse" data-bs-target="#codexHeaderSearch" aria-expanded="false" aria-controls="codexHeaderSearch">
                     <span class="visually-hidden"><?php _e('Search', 'rap'); ?></span>
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15.5 14h-.79l-.28-.27A6 6 0 1 0 14 15.5l.27.28v.79L21 22.5 22.5 21zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
