@@ -22,11 +22,62 @@
 
     var initOffcanvasMenu = function () {
         var nav = document.querySelector('.codex-offcanvas-nav');
-        if (!nav) {
+        var offcanvas = document.querySelector('#codexOffcanvas');
+        if (!nav || !offcanvas) {
             return;
         }
 
         var toggleRecords = [];
+
+        var bootstrapAvailable = typeof bootstrap !== 'undefined' && typeof bootstrap.Offcanvas !== 'undefined';
+
+        if (!bootstrapAvailable) {
+            var toggles = document.querySelectorAll('[data-bs-toggle="offcanvas"]');
+            var closeButton = offcanvas.querySelector('[data-bs-dismiss="offcanvas"]');
+            var backdrop = document.querySelector('.codex-offcanvas-backdrop');
+
+            if (!backdrop) {
+                backdrop = document.createElement('div');
+                backdrop.className = 'codex-offcanvas-backdrop';
+                document.body.appendChild(backdrop);
+            }
+
+            var closeOffcanvas = function () {
+                offcanvas.classList.remove('is-open');
+                backdrop.classList.remove('show');
+                document.body.classList.remove('codex-offcanvas-open');
+                offcanvas.setAttribute('aria-hidden', 'true');
+            };
+
+            var openOffcanvas = function () {
+                offcanvas.classList.add('is-open');
+                backdrop.classList.add('show');
+                document.body.classList.add('codex-offcanvas-open');
+                offcanvas.setAttribute('aria-hidden', 'false');
+            };
+
+            toggles.forEach(function (toggle) {
+                toggle.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    openOffcanvas();
+                });
+            });
+
+            if (closeButton) {
+                closeButton.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    closeOffcanvas();
+                });
+            }
+
+            backdrop.addEventListener('click', closeOffcanvas);
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape' && offcanvas.classList.contains('is-open')) {
+                    closeOffcanvas();
+                }
+            });
+        }
 
         var queryDirectChild = function (element, selector) {
             return Array.prototype.find.call(element.children, function (child) {

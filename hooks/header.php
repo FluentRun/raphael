@@ -86,14 +86,19 @@ add_action('adstm_cart_quantity_link', 'adstm_cart_quantity_link');
 
 
 add_action('adstm_logo_header', function(){
+    $logo_src = cz('tp_logo_img');
+    $logo_src = $logo_src ? set_url_scheme($logo_src, is_ssl() ? 'https' : 'http') : '';
+    $logo_src = esc_url($logo_src);
+
     printf(
         ' <div class="logo-box">
                     <div class="logo">
-                        <a href="%1$s"><img src="%2$s?1000" alt=""></a>
+                        <a href="%1$s"><img src="%2$s" alt="%3$s" loading="eager" decoding="async"></a>
                     </div>
                 </div>',
         esc_url(adstm_home_url()),
-        cz( 'tp_logo_img' )
+        $logo_src,
+        esc_attr(get_bloginfo('name'))
     );
 });
 
