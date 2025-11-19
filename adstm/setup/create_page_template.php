@@ -530,14 +530,17 @@ function mode_save($params) {
 
         $options = mode_get_defaults();
 
-        $data      = get_option( 'cz_' .wp_get_theme() );
+        $theme      = wp_get_theme();
+        $option_key = 'cz_' . $theme->get( 'Name' );
+
+        $data      = get_option( $option_key );
         $mix_data = array_merge($options,$data);
 
         foreach( $params as $key => $value ) {
             $mix_data[ $key ] = $value;
         }
 
-         return update_option( 'cz_' .wp_get_theme() , $mix_data );
+         return update_option( $option_key , $mix_data );
     }
     return false;
 }
