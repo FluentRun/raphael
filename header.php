@@ -21,7 +21,11 @@
     $version = $adstm_theme->get( 'Version' );
     ?>
 
-	<link  href="<?php echo get_template_directory_uri(); ?>/assets/css/head.css?ver=<?php echo $version; ?>" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <link  href="<?php echo get_template_directory_uri(); ?>/assets/css/head.css?ver=<?php echo $version; ?>" rel="stylesheet">
 
 
 
@@ -29,12 +33,14 @@
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>    <![endif]-->
 
-	<?php wp_head(); ?>
+        <?php wp_head(); ?>
 
-	<style>
-		<?php echo cz('tp_style');?>
-	</style>
-	<?php echo cz( 'tp_head' ); ?>
+        <style>
+                <?php echo cz('tp_style');?>
+        </style>
+        <?php echo cz( 'tp_head' ); ?>
+
+        <link  href="<?php echo get_template_directory_uri(); ?>/assets/css/cal-theme.css?ver=<?php echo $version; ?>" rel="stylesheet">
 
     <?php $body_classes = [];
 
