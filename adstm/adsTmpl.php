@@ -52,14 +52,25 @@ class adsTmpl {
 	 */
 	static public function box_meta(){
 
-		$seo = '<title>' . wp_title('', false) . '</title>';
+		$seo = '';
 
 		if( class_exists( '\models\seo\Meta' ) ) {
 			
 			$seo = \models\seo\Meta::block();
+		} elseif ( ! current_theme_supports( 'title-tag' ) ) {
+			
+			$document_title = function_exists( 'wp_get_document_title' )
+					? wp_get_document_title()
+					: wp_title( '', false );
+
+			if ( $document_title ) {
+				$seo = sprintf( '<title>%s</title>', esc_html( $document_title ) );
+			}
 		}
 
-		echo $seo;
+		if ( $seo ) {
+			echo $seo;
+		}
 	}
 
 	/**
@@ -170,13 +181,18 @@ class adsTmpl {
 			$quantity = sprintf('<span class="count">(%1$s)</span>', $quantity);
 		}
 
-		$title = ( $other_title ) ? $other_title : $title;
+		$title       = ( $other_title ) ? $other_title : $title;
+		$request_uri = isset( $_SERVER['REQUEST_URI'] ) ? (string) $_SERVER['REQUEST_URI'] : '';
 
-        function endsWith($haystack, $needle) {
-            return substr_compare($haystack, $needle, -strlen($needle)) === 0;
-        }
-		if( ! $title && (endsWith($_SERVER['REQUEST_URI'], '/product/') ||  $cp_start = stripos($_SERVER['REQUEST_URI'],'product/?') ||  $cp_start = stripos($_SERVER['REQUEST_URI'],'product/page/'))) {
-			$title = __( 'All Products', 'elgreco' ) ;
+		if (
+			! $title
+			&& (
+				str_ends_with( $request_uri, '/product/' )
+				|| str_contains( $request_uri, 'product/?' )
+				|| str_contains( $request_uri, 'product/page/' )
+			)
+		) {
+			$title = __( 'All Products', 'elgreco' );
 		}
 		
 		$title = '<h1>' . $title . '</h1>' . $quantity;

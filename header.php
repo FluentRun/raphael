@@ -106,6 +106,7 @@
 
 </head>
 <body <?php body_class( $body_classes ); if(cz( 'tp_do_rtl' )){ ?>dir="rtl"<?php } ?> >
+<?php wp_body_open(); ?>
 <div class="header">
     <div class="header_cont">
         <div class="container">

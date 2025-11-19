@@ -113,9 +113,14 @@ if ( ! function_exists( 'adstm_theme_setup' ) ) {
      * Set up core theme defaults and translation loading.
      */
     function adstm_theme_setup() {
-        load_theme_textdomain( 'elgreco', get_template_directory() . '/languages' );
+        load_theme_textdomain( ADSTM_T_DOMAIN, get_template_directory() . '/languages' );
 
+        add_theme_support( 'title-tag' );
         add_theme_support( 'post-thumbnails' );
+        add_theme_support(
+            'html5',
+            [ 'comment-form', 'comment-list', 'gallery', 'caption', 'style', 'script', 'search-form' ]
+        );
 
         register_nav_menus( [
             'category'        => 'Main Menu',

@@ -1,10 +1,12 @@
 <?php
 
-do_action('cz_menu_init');
+add_action( 'after_setup_theme', function () {
+    do_action( 'cz_menu_init' );
 
-if( function_exists('init_cz') ) {
-    init_cz();
-}
+    if ( function_exists( 'init_cz' ) ) {
+        init_cz();
+    }
+} );
 
 // Only show the empty template when the connected plugins signal an error.
 // Without those plugins, the theme should render normally.
