@@ -5,6 +5,7 @@ if( !current_user_can( 'manage_options' ) ) {
 
 
 if(!isset($_REQUEST['nolive'])){
+    wp_enqueue_media();
     $template_dir = get_template_directory_uri();
     ?><!doctype html>
     <html lang="en-US" class="no-js" xmlns="http://www.w3.org/1999/html">
@@ -26,7 +27,19 @@ if(!isset($_REQUEST['nolive'])){
         <link href="<?php echo $template_dir; ?>/assets/css/customization/style.css" rel="stylesheet">
         <link href="<?php echo $template_dir; ?>/assets/css/customization/bootstrap.css" rel="stylesheet">
 
+        <?php wp_head(); ?>
 
+
+        <script src="<?php echo includes_url( '/js/jquery/jquery.min.js' ); ?>"></script>
+        <script src="<?php echo includes_url( '/js/jquery/jquery-migrate.min.js' ); ?>"></script>
+        <script src="<?php echo $template_dir; ?>/assets/js/customization/handlebars.min.js"></script>
+        <script src="<?php echo $template_dir; ?>/assets/js/customization/libs.js"></script>
+        <script src="<?php echo $template_dir; ?>/assets/js/customization/spectrum.js"></script>
+        <script src="<?php echo $template_dir; ?>/assets/js/customization/cropper.min.js"></script>
+        <script>
+            var ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ); ?>';
+        </script>
+        <script src="<?php echo $template_dir; ?>/assets/js/customization/script.js"></script>
     </head>
     <body class="<?php
     if(defined('SLV_PATH')){
