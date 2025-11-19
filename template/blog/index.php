@@ -15,6 +15,15 @@ $is_item_single_post = (
 
 set_query_var( 'raphael_is_item_single_post', $is_item_single_post );
 
+$blog_wrapper_classes = array( 'blog-wrapper' );
+
+if ( $is_item_single_post ) {
+    $blog_wrapper_classes[] = 'blog-wrapper--item-single';
+}
+
+$blog_wrapper_classes = array_map( 'sanitize_html_class', $blog_wrapper_classes );
+$blog_wrapper_class_attr = esc_attr( implode( ' ', array_unique( $blog_wrapper_classes ) ) );
+
 ?>
 
 <style>
@@ -39,9 +48,30 @@ set_query_var( 'raphael_is_item_single_post', $is_item_single_post );
 
     <?php endif;?>
 
+    <?php if ( $is_item_single_post ): ?>
+
+    .blog-wrapper--item-single .blog-single-data__local-info,
+    .blog-wrapper--item-single .blog-single-data__local-info-author,
+    .blog-wrapper--item-single .blog-single-data__local-info-date,
+    .blog-wrapper--item-single .blog-single-data__local-info-date-and-comments,
+    .blog-wrapper--item-single .blog-single-data__local-info-comments-count,
+    .blog-wrapper--item-single .blog-breadcrumbs,
+    .blog-wrapper--item-single .breadcrumbs,
+    .blog-wrapper--item-single .blog-top-full-screen-block,
+    .blog-wrapper--item-single .blog-top-full-screen-block__inner,
+    .blog-wrapper--item-single #blog-single-comments-section,
+    .blog-wrapper--item-single .blog-single-comments-section,
+    .blog-wrapper--item-single .comments-area,
+    .blog-wrapper--item-single .comment-respond,
+    .blog-wrapper--item-single .comment-list {
+        display: none !important;
+    }
+
+    <?php endif; ?>
+
 </style>
 
-<div class="blog-wrapper">
+<div class="<?php echo $blog_wrapper_class_attr; ?>">
 
     <?php if ( ! $is_item_single_post ): ?>
         <!-- BREADCRUMBS -->

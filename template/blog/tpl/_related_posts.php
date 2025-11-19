@@ -1,16 +1,26 @@
 <?php
 
 $cats = get_the_category();
+$primary_term_id = null;
 
-if ( empty( $cats ) || ! isset( $cats[0]->term_id ) ) {
+if ( ! empty( $cats ) && is_array( $cats ) ) {
+    foreach ( $cats as $term ) {
+        if ( $term instanceof WP_Term && ! empty( $term->term_id ) ) {
+            $primary_term_id = (int) $term->term_id;
+            break;
+        }
+    }
+}
+
+if ( empty( $primary_term_id ) ) {
     return;
 }
 
 $args = array(
-    'post_type' => 'post',
-    'post__not_in' => array( get_the_ID() ),
+    'post_type'      => 'post',
+    'post__not_in'   => array( get_the_ID() ),
     'posts_per_page' => 3,
-    'cat'     => $cats[0]->term_id
+    'cat'            => $primary_term_id,
 );
 
 // The Query

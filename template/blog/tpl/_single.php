@@ -20,9 +20,17 @@
         );
     }
 
+    $blog_single_classes = array( 'blog-single' );
+
+    if ( $is_item_single_post ) {
+        $blog_single_classes[] = 'blog-single--item-single';
+    }
+
+    $blog_single_class_attr = esc_attr( implode( ' ', array_map( 'sanitize_html_class', $blog_single_classes ) ) );
+
     ?>
 
-    <div class="blog-single">
+    <div class="<?php echo $blog_single_class_attr; ?>">
 
         <div class="blog-single__title">
             <?php the_title(); ?>
