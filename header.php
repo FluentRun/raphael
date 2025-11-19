@@ -23,6 +23,7 @@
 
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link  href="<?php echo get_template_directory_uri(); ?>/assets/css/head.css?ver=<?php echo $version; ?>" rel="stylesheet">
+        <link  href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap5-overrides.css?ver=<?php echo $version; ?>" rel="stylesheet">
 
 
 
@@ -95,26 +96,28 @@
             <div class="container">
                 <div class="row mobile-top-panel desktop-top-panel">
                     <div class="col-12">
-                        <div class="pages-menu">
-                            <?php do_action('ads_pages_menu'); ?>
-                        </div>
-                        <div class="text-shipping">
-                            <?php if(cz('tp_text_top_header')){
-                                do_action('adstm_shipping_icon');
-                            echo cz('tp_text_top_header');
-                            }  ?>
-                        </div>
-                        <div class="top-right">
-                                    <div class="box-active">
-                                            <?php do_action('adstm_loginButton') ?>
+                        <div class="top-panel__layout d-flex flex-column flex-lg-row align-items-lg-center gap-3">
+                            <div class="text-shipping order-1 order-lg-2">
+                                <?php if(cz('tp_text_top_header')){
+                                    do_action('adstm_shipping_icon');
+                                echo cz('tp_text_top_header');
+                                }  ?>
                             </div>
-
-                            <?php if(cz('tp_currency_switcher')){ ?>
-                                <div class="box-active box-active-currency">
-                                    <?php do_action('adstm_dropdown_currency') ?>
+                            <div class="pages-menu flex-grow-1 order-2 order-lg-1">
+                                <?php do_action('ads_pages_menu'); ?>
+                            </div>
+                            <div class="top-right d-flex align-items-center gap-3 justify-content-end ms-lg-auto order-3">
+                                        <div class="box-active">
+                                                <?php do_action('adstm_loginButton') ?>
                                 </div>
-                            <?php } ?>
 
+                                <?php if(cz('tp_currency_switcher')){ ?>
+                                    <div class="box-active box-active-currency">
+                                        <?php do_action('adstm_dropdown_currency') ?>
+                                    </div>
+                                <?php } ?>
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -124,37 +127,39 @@
         <header class="site-header__bar">
             <div class="container">
             <div class="mobile-header desc-header">
-                <button type="button" class="navbar-toggler d-inline-flex d-md-none js-toggle-menu" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rap' ); ?>">
-                    <span class="visually-hidden"><?php _e( 'Toggle navigation', 'rap' ); ?></span>
-                    <span class="navbar-toggler-icon" aria-hidden="true"></span>
-                </button>
-                <div class="wrap box">
-                    <div class="box-logo">
-                        <?php do_action('adstm_logo_header') ?>
-                    </div>
-                    <div class="search-wrap">
-                        <div class="box box-search">
-                            <?php do_action('adstm_search') ?>
+                <div class="site-header__grid d-flex align-items-center flex-wrap gap-3">
+                    <button type="button" class="navbar-toggler d-inline-flex d-md-none js-toggle-menu order-0" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rap' ); ?>">
+                        <span class="visually-hidden"><?php _e( 'Toggle navigation', 'rap' ); ?></span>
+                        <span class="navbar-toggler-icon" aria-hidden="true"></span>
+                    </button>
+                    <div class="wrap box d-flex align-items-center flex-wrap gap-3 flex-grow-1 order-1">
+                        <div class="box-logo flex-shrink-0">
+                            <?php do_action('adstm_logo_header') ?>
                         </div>
-                    </div>
-                    <div class="text-shipping d-none d-sm-block">
-                        <?php if(cz('tp_text_top_header')){
-                            do_action('adstm_shipping_icon');
-                            echo cz('tp_text_top_header'); }
-                        ?>
-                    </div>
-                    <div class="box-cart">
-                        <?php do_action('adstm_cart_quantity_link') ?>
-                    </div>
+                        <div class="search-wrap flex-grow-1 order-3 order-md-2">
+                            <div class="box box-search">
+                                <?php do_action('adstm_search') ?>
+                            </div>
+                        </div>
+                        <div class="text-shipping d-none d-sm-block order-2 order-lg-3 ms-lg-auto">
+                            <?php if(cz('tp_text_top_header')){
+                                do_action('adstm_shipping_icon');
+                                echo cz('tp_text_top_header'); }
+                            ?>
+                        </div>
+                        <div class="box-cart order-4">
+                            <?php do_action('adstm_cart_quantity_link') ?>
+                        </div>
 
+                    </div>
                 </div>
             </div>
         </div>
         <div class="categories-menu d-none d-md-block">
             <div class="container">
-                <div class="row">
+                <div class="row gy-3">
                     <div class="categories-menu-box col-12">
-                        <ul class="categories-menu-line">
+                        <ul class="categories-menu-line nav flex-wrap align-items-center">
 					        <?php ads_menu_product(4); ?>
                             <li class="more js-more parent-top"><a href="#"><?php _e('More', 'rap'); ?></a></li>
                         </ul>

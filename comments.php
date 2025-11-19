@@ -111,19 +111,22 @@ function custom_comment_form( $args = array(), $post_id = null ) {
 
 	$args = wp_parse_args( $args );
 
-	$fields   =  array(
-		'author' => '<p class="col-md-6">
-				<input class="form-control" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="Your Name" />
-			</p>',
+        $fields   =  array(
+                'author' => '<div class="col-12 col-md-6 mb-3 comment-form-author">
+                                <label for="author" class="form-label">' . esc_html__( 'Your Name', 'rap' ) . '</label>
+                                <input class="form-control form-control-lg" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" placeholder="' . esc_attr__( 'Your Name', 'rap' ) . '" />
+                        </div>',
 
-		'email' => '<p class="col-md-6">
-				<input class="form-control" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" placeholder="Your Email" required />
-			</p>',
+                'email' => '<div class="col-12 col-md-6 mb-3 comment-form-email">
+                                <label for="email" class="form-label">' . esc_html__( 'Your Email', 'rap' ) . '</label>
+                                <input class="form-control form-control-lg" id="email" name="email" type="email" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" placeholder="' . esc_attr__( 'Your Email', 'rap' ) . '" required />
+                        </div>',
 
-		'url' => '<p class="col-md-12">
-				<input class="form-control" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="Your Site" />
-			</p>',
-	);
+                'url' => '<div class="col-12 mb-3 comment-form-url">
+                                <label for="url" class="form-label">' . esc_html__( 'Your Site', 'rap' ) . '</label>
+                                <input class="form-control" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) . '" placeholder="' . esc_attr__( 'Your Site', 'rap' ) . '" />
+                        </div>',
+        );
 
 	/**
 	 * Filter the default comment form fields.
@@ -136,20 +139,21 @@ function custom_comment_form( $args = array(), $post_id = null ) {
 	$defaults = array(
 	'fields'               => $fields,
 
-	'comment_field'        => '<p class="comment-form-comment">
-			<textarea class="form-control" name="comment" rows="5" placeholder="Your comment" required></textarea>
-		</p>',
+        'comment_field'        => '<div class="mb-3 comment-form-comment">
+                        <label for="comment" class="form-label">' . esc_html__( 'Your comment', 'rap' ) . '</label>
+                        <textarea class="form-control" id="comment" name="comment" rows="5" placeholder="' . esc_attr__( 'Your comment', 'rap' ) . '" required></textarea>
+                </div>',
 
 	/** This filter is documented in wp-includes/link-template.php */
 	'must_log_in'          => '<p class="must-log-in">' . sprintf( __( 'You must be <a href="%s">logged in</a> to post a comment.' ), wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
 
 	/** This filter is documented in wp-includes/link-template.php */
 	'logged_in_as'         => '<p class="logged-in-as">' . sprintf( __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>' ), get_edit_user_link(), $user_identity, wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ) ) ) ) . '</p>',
-	'comment_notes_before' => '<div class="row row-margin">',
-	'comment_notes_after'  => '</div>',
+        'comment_notes_before' => '<div class="row g-3">',
+        'comment_notes_after'  => '</div>',
 	'id_form'              => 'commentform',
 	'id_submit'            => 'submit',
-	'class_submit'         => 'submit btn btn-lg btn-legacy',
+        'class_submit'         => 'submit btn btn-lg btn-primary btn-legacy',
 	'name_submit'          => 'submit',
 	'title_reply'          => __('Leave a comment'),
 	'title_reply_to'       => __('Leave a reply to %s'),
@@ -192,7 +196,7 @@ function custom_comment_form( $args = array(), $post_id = null ) {
 
 			<?php else : ?>
 
-				<form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" class="comment-form form-comment" data-toggle="validator" role="form">
+                                <form action="<?php echo site_url( '/wp-comments-post.php' ); ?>" method="post" id="<?php echo esc_attr( $args['id_form'] ); ?>" class="comment-form form-comment" data-bs-toggle="validator" role="form">
 
 					<?php
 
