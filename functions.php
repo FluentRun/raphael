@@ -797,6 +797,14 @@ add_action( 'template_redirect', 'handle_live_customization_request' );
 
 function live_template() {
 
+    if ( ! function_exists( 'live_cstm_get_defaults' ) ) {
+        $live_core = __DIR__ . '/inc/live_core.php';
+
+        if ( file_exists( $live_core ) ) {
+            include_once $live_core;
+        }
+    }
+
     if(isset($_POST['template'])){
         $file = __DIR__ . '/inc/live_tabs/'.$_POST['template'].'.php';
         if( defined( 'ADS_PATH' ) && file_exists( ADS_PATH . 'includes/live/settings_template.php' ) ){
