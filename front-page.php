@@ -42,7 +42,7 @@ get_header();
     }
     .hero-feature-card {
         background: #fff;
-        border-radius: 18px;
+        border-radius: 4px;
         border: 1px solid #e5e7eb;
         text-align: center;
         padding: 16px;
@@ -138,7 +138,7 @@ get_header();
 
                         <div class="position-relative border rounded-3 p-3 shadow-sm hero-animation-shell">
                             <div class="row g-1 hero-feature-row" role="list">
-                                <div class="col-6 col-md-6 col-lg-3" role="listitem">
+                                <div class="col-6 col-md-3 col-lg-3 col-xl-3" role="listitem">
                                     <div class="hero-feature-card h-100">
                                         <svg viewBox="0 0 64 64" aria-hidden="true">
                                             <rect x="10" y="14" width="44" height="38" rx="6"></rect>
@@ -152,7 +152,7 @@ get_header();
                                         <span>Booking</span>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-6 col-lg-3" role="listitem">
+                                <div class="col-6 col-md-3 col-lg-3 col-xl-3" role="listitem">
                                     <div class="hero-feature-card h-100">
                                         <svg viewBox="0 0 64 64" aria-hidden="true">
                                             <path d="M12 16h8l6 28h24l6-20H20"></path>
@@ -163,7 +163,7 @@ get_header();
                                         <span>E-commerce</span>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-6 col-lg-3" role="listitem">
+                                <div class="col-6 col-md-3 col-lg-3 col-xl-3" role="listitem">
                                     <div class="hero-feature-card h-100">
                                         <svg viewBox="0 0 64 64" aria-hidden="true">
                                             <path d="M12 50h40"></path>
@@ -175,7 +175,7 @@ get_header();
                                         <span>Tracking</span>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-6 col-lg-3" role="listitem">
+                                <div class="col-6 col-md-3 col-lg-3 col-xl-3" role="listitem">
                                     <div class="hero-feature-card h-100">
                                         <svg viewBox="0 0 64 64" aria-hidden="true">
                                             <path d="M26 20l-12 12 12 12"></path>
