@@ -328,10 +328,25 @@ get_header();
                             </div>
 
                             <div class="d-flex justify-content-center gap-4 mt-3 fs-4 text-muted">
-                                <span>🎤</span>
-                                <span>🎥</span>
-                                <span>💬</span>
-                                <span>🔗</span>
+                                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="4" y="5" width="16" height="6" rx="2"></rect>
+                                    <rect x="4" y="13" width="16" height="6" rx="2"></rect>
+                                    <path d="M8 9h0"></path>
+                                    <path d="M8 17h0"></path>
+                                </svg>
+                                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="9"></circle>
+                                    <path d="M12 7v6l3 2"></path>
+                                </svg>
+                                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M6 10.5c0-3.59 2.69-6.5 6-6.5s6 2.91 6 6.5c0 5.5-6 9.5-6 9.5s-6-4-6-9.5z"></path>
+                                    <path d="M9 10a3 3 0 1 1 6 0v2H9z"></path>
+                                    <path d="M12 14.5v1"></path>
+                                </svg>
+                                <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 13l2-2a3 3 0 0 0 0-4.24l-1.76-1.76a3 3 0 0 0-4.24 0L4 7.99a3 3 0 0 0 0 4.24L5.76 14"></path>
+                                    <path d="M14 11l-2 2a3 3 0 0 0 0 4.24l1.76 1.76a3 3 0 0 0 4.24 0L20 16a3 3 0 0 0 0-4.24L18.24 10"></path>
+                                </svg>
                             </div>
                         </div>
                     </div>
