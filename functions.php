@@ -773,6 +773,20 @@ if( current_user_can( 'manage_options' ) ){
 }
 
 
+function handle_live_customization_request() {
+    $requested_path = trim( parse_url( $_SERVER['REQUEST_URI'], PHP_URL_PATH ), '/' );
+
+    if ( 'live_customization' === $requested_path ) {
+        status_header( 200 );
+
+        include get_template_directory() . '/inc/live_customization.php';
+        exit;
+    }
+}
+
+add_action( 'template_redirect', 'handle_live_customization_request' );
+
+
 function live_template() {
 
     if(isset($_POST['template'])){

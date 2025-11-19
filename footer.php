@@ -134,7 +134,10 @@ $xl_size = $is_socs ? '3' : '4';
                 <?php } ?>
             </div>
         <?php endif; ?>
-        <div class="footer-copyright"><?php echo str_replace( '{{YEAR}}', date( 'Y' ), cz( 'tp_copyright' ) ); ?></div>
+        <?php
+        $tp_copyright = cz( 'tp_copyright' );
+        ?>
+        <div class="footer-copyright"><?php echo str_replace( '{{YEAR}}', date( 'Y' ), $tp_copyright ?: '' ); ?></div>
     </div>
 </div>
     <?php if( cz( 'tp_enable_upbutton' ) ){ ?>
