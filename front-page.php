@@ -27,7 +27,7 @@ get_header();
     }
     .hero-animation-shell {
         min-height: 260px;
-        background: #0f172a;
+        background: linear-gradient(135deg, #001e3c 0%, #000000 100%);
         border-radius: 24px;
         overflow: hidden;
         padding: 24px;
@@ -39,6 +39,10 @@ get_header();
         grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
         gap: 1.25rem;
         width: 100%;
+    }
+    .hero-feature-row {
+        --bs-gutter-x: 2px;
+        --bs-gutter-y: 2px;
     }
     .hero-feature-card {
         background: #fff;
@@ -137,7 +141,7 @@ get_header();
                         </div>
 
                         <div class="position-relative border rounded-3 p-3 shadow-sm hero-animation-shell">
-                            <div class="row g-3" role="list">
+                            <div class="row hero-feature-row" role="list">
                                 <div class="hero-feature-card col-6 col-md-6 col-lg-3" role="listitem" style="border-radius:4px;">
                                     <svg viewBox="0 0 64 64" aria-hidden="true">
                                         <rect x="10" y="14" width="44" height="38" rx="6"></rect>
