@@ -329,39 +329,36 @@ get_header();
 
                             <div class="d-flex justify-content-center gap-4 mt-3 fs-4 text-muted">
                                 <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="12" y="12" width="40" height="12" rx="4"></rect>
-                                    <rect x="12" y="28" width="40" height="12" rx="4"></rect>
-                                    <rect x="12" y="44" width="40" height="12" rx="4"></rect>
-                                    <circle cx="20" cy="18" r="2"></circle>
-                                    <circle cx="20" cy="34" r="2"></circle>
-                                    <circle cx="20" cy="50" r="2"></circle>
-                                    <path d="M42 6l-6 8h8l-6 8"></path>
+                                    <path d="M16 44c0-8.84 7.16-16 16-16s16 7.16 16 16"></path>
+                                    <path d="M12 48h40"></path>
+                                    <path d="M32 44l-6-10"></path>
+                                    <circle cx="32" cy="44" r="2"></circle>
+                                    <path d="M22 40l2-4"></path>
+                                    <path d="M42 40l-2-4"></path>
                                 </svg>
                                 <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="32" cy="32" r="20"></circle>
-                                    <path d="M32 16v16l12 8"></path>
-                                    <path d="M20 32h6"></path>
-                                    <path d="M38 18l-4-4-4 4"></path>
+                                    <rect x="14" y="14" width="36" height="12" rx="3"></rect>
+                                    <rect x="14" y="30" width="36" height="12" rx="3"></rect>
+                                    <rect x="14" y="46" width="36" height="10" rx="3"></rect>
+                                    <circle cx="20" cy="20" r="2"></circle>
+                                    <circle cx="20" cy="36" r="2"></circle>
+                                    <circle cx="20" cy="52" r="2"></circle>
+                                    <path d="M40 38l10 4v6c0 4.4-4.5 7.6-10 9-5.5-1.4-10-4.6-10-9v-6z"></path>
                                 </svg>
                                 <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <path d="M16 16h32l-12 12v8l-8 10v-18z"></path>
-                                    <path d="M32 36v6"></path>
-                                    <path d="M28 42l4 4 4-4"></path>
-                                    <circle cx="20" cy="52" r="5"></circle>
-                                    <circle cx="32" cy="52" r="5"></circle>
-                                    <circle cx="44" cy="52" r="5"></circle>
-                                    <path d="M25 52h4"></path>
-                                    <path d="M39 52h4"></path>
+                                    <rect x="12" y="14" width="40" height="26" rx="4"></rect>
+                                    <path d="M18 34l10-10 8 8 10-12"></path>
+                                    <path d="M12 46h40"></path>
+                                    <path d="M26 50h12"></path>
                                 </svg>
                                 <svg width="48" height="48" viewBox="0 0 64 64" aria-hidden="true" stroke="#000" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="16" cy="20" r="6"></circle>
-                                    <circle cx="48" cy="20" r="6"></circle>
-                                    <circle cx="32" cy="44" r="6"></circle>
-                                    <path d="M22 20h16"></path>
-                                    <path d="M38 16l6 4-6 4"></path>
-                                    <path d="M32 26v10"></path>
-                                    <path d="M26 38l6 8 6-8"></path>
-                                    <path d="M16 26c0 9.94 8.06 18 18 18"></path>
+                                    <path d="M14 16h36"></path>
+                                    <path d="M18 24l14 10"></path>
+                                    <path d="M46 24L32 34"></path>
+                                    <rect x="24" y="30" width="16" height="10" rx="2"></rect>
+                                    <path d="M32 40v10"></path>
+                                    <circle cx="32" cy="54" r="6"></circle>
+                                    <path d="M32 50v4"></path>
                                 </svg>
                             </div>
                         </div>
