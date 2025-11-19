@@ -361,42 +361,42 @@ get_header();
         <div class="d-none d-md-flex justify-content-center align-items-center gap-4 mt-5">
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “Absolutely love this tool. Best scheduling experience by far.”
+                    “Webmakerr replaced three tools for our studio—our account managers book client sessions, track invoices, and log CRM updates without leaving the dashboard.”
                 </p>
 
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle bg-secondary" style="width:36px; height:36px;"></div>
                     <div class="ms-3 text-start">
-                        <p class="fw-semibold text-dark small mb-1">Jane Doe</p>
-                        <p class="text-muted small m-0">Founder, Example Co.</p>
+                        <p class="fw-semibold text-dark small mb-1">Noah Patel</p>
+                        <p class="text-muted small m-0">Operations Lead, Horizon Creative</p>
                     </div>
                 </div>
             </div>
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 420px; height: 230px;">
                 <p class="text-dark fw-semibold mb-4">
-                    “Moving here was the best decision. Smooth, simple, and everything just works.”
+                    “With Webmakerr’s business OS we automate scheduling, nurture leads through the CRM, and launch campaigns from the same calendar view. It's the command center for our revenue team.”
                 </p>
 
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle bg-secondary" style="width:40px; height:40px;"></div>
                     <div class="ms-3 text-start">
-                        <p class="fw-semibold text-dark small mb-1">Alex Carter</p>
-                        <p class="text-muted small m-0">CTO, Example App</p>
+                        <p class="fw-semibold text-dark small mb-1">Melissa Grant</p>
+                        <p class="text-muted small m-0">VP Revenue Operations, Northwind Legal</p>
                     </div>
                 </div>
             </div>
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “Cleaner, faster, and better than anything else I've used.”
+                    “The marketing and booking modules talk to each other, so every webinar registration creates a CRM record and follow-up workflow automatically.”
                 </p>
 
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle bg-secondary" style="width:36px; height:36px;"></div>
                     <div class="ms-3 text-start">
-                        <p class="fw-semibold text-dark small mb-1">Rachel Mei</p>
-                        <p class="text-muted small m-0">Marketing Lead, Startup X</p>
+                        <p class="fw-semibold text-dark small mb-1">Sofia Alvarez</p>
+                        <p class="text-muted small m-0">Head of Growth, Latitude Labs</p>
                     </div>
                 </div>
             </div>
@@ -405,14 +405,14 @@ get_header();
         <div class="d-md-none mx-auto mt-4" style="max-width: 380px;">
             <div class="bg-white border rounded-4 shadow-sm p-4">
                 <p class="text-dark fw-semibold mb-4">
-                    “Moving here was the best decision. Smooth, simple, and everything just works.”
+                    “With Webmakerr’s business OS we automate scheduling, nurture leads through the CRM, and launch campaigns from the same calendar view. It's the command center for our revenue team.”
                 </p>
 
                 <div class="d-flex align-items-center">
                     <div class="rounded-circle bg-secondary" style="width:36px; height:36px;"></div>
                     <div class="ms-3 text-start">
-                        <p class="fw-semibold text-dark small mb-1">Alex Carter</p>
-                        <p class="text-muted small m-0">CTO, Example App</p>
+                        <p class="fw-semibold text-dark small mb-1">Melissa Grant</p>
+                        <p class="text-muted small m-0">VP Revenue Operations, Northwind Legal</p>
                     </div>
                 </div>
             </div>
