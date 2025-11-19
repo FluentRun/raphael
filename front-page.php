@@ -516,28 +516,16 @@ get_header();
                     </div>
 
                     <div class="row g-0">
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end border-bottom p-4" style="height:120px;">
+                        <div class="col-4 d-flex justify-content-center align-items-center border-end p-4" style="height:120px;">
                             <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/discover.svg' ); ?>" class="opacity-75" width="60" alt="HubSpot">
                         </div>
 
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end border-bottom p-4" style="height:120px;"></div>
-
-                        <div class="col-4 d-flex justify-content-center align-items-center border-bottom p-4" style="height:120px;">
+                        <div class="col-4 d-flex justify-content-center align-items-center border-end p-4" style="height:120px;">
                             <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/paypal.svg' ); ?>" class="opacity-75" width="55" alt="Outlook">
-                        </div>
-                    </div>
-
-                    <div class="row g-0">
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/maestro.svg' ); ?>" class="opacity-75" width="80" alt="Salesforce">
-                        </div>
-
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/western.svg' ); ?>" class="opacity-75" width="45" alt="Google Meet">
                         </div>
 
                         <div class="col-4 d-flex justify-content-center align-items-center p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/trustf/goDaddyf.svg' ); ?>" class="opacity-75" width="45" alt="Google Calendar">
+                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/visa.svg' ); ?>" class="opacity-75" width="40" alt="Slack">
                         </div>
                     </div>
                 </div>
