@@ -112,6 +112,19 @@ function adstm_register_theme_menu() {
 }
 add_action( 'admin_menu', 'adstm_register_theme_menu' );
 
+function adstm_register_additional_settings() {
+    register_setting(
+        'raphael_theme_settings_group',
+        'raphael_webhook_url',
+        [
+            'type'              => 'string',
+            'sanitize_callback' => 'esc_url_raw',
+            'default'           => '',
+        ]
+    );
+}
+add_action( 'admin_init', 'adstm_register_additional_settings' );
+
 function adstm_render_theme_settings_page() {
     if ( ! current_user_can( 'manage_options' ) ) {
         return;
@@ -149,6 +162,9 @@ function adstm_render_theme_settings_page() {
             $updated[ $key ] = sanitize_text_field( $raw_value );
         }
 
+        $webhook_url = isset( $_POST['raphael_webhook_url'] ) ? wp_unslash( $_POST['raphael_webhook_url'] ) : '';
+        update_option( 'raphael_webhook_url', esc_url_raw( $webhook_url ) );
+
         $defaults = adstm_get_theme_defaults();
         update_option( 'raphael_theme_settings', wp_parse_args( $updated, $defaults ) );
         adstm_get_theme_options( true );
@@ -166,6 +182,7 @@ function adstm_render_theme_settings_page() {
     }
 
     $options = adstm_get_theme_options( true );
+    $webhook_url = get_option( 'raphael_webhook_url', '' );
 
     ?>
     <div class="wrap">
@@ -184,8 +201,24 @@ function adstm_render_theme_settings_page() {
 
         <h2><?php esc_html_e( 'Update Settings', 'rap' ); ?></h2>
         <form method="post">
+            <?php settings_fields( 'raphael_theme_settings_group' ); ?>
             <?php wp_nonce_field( 'adstm_save_settings_action' ); ?>
             <input type="hidden" name="adstm_save_settings" value="1" />
+
+            <h3><?php esc_html_e( 'Webhook Settings', 'rap' ); ?></h3>
+            <table class="widefat striped" style="margin-bottom: 20px;">
+                <tbody>
+                    <tr>
+                        <td style="width: 25%;">
+                            <label for="raphael_webhook_url"><code>raphael_webhook_url</code></label>
+                        </td>
+                        <td>
+                            <input type="text" id="raphael_webhook_url" name="raphael_webhook_url" value="<?php echo esc_attr( $webhook_url ); ?>" class="regular-text" />
+                            <p class="description"><?php esc_html_e( 'Webhook endpoint used by the Contact Us form.', 'rap' ); ?></p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
             <table class="widefat striped">
                 <thead>
