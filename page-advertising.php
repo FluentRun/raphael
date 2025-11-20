@@ -19,6 +19,7 @@ wp_enqueue_script(
 );
 
 $theme_dir = get_template_directory_uri();
+$checkout_url = 'https://beta.webmakerr.com/?fluent-cart=instant_checkout&item_id=1&quantity=1';
 
 get_header();
 ?>
@@ -219,17 +220,17 @@ get_header();
                     Learn the exact playbooks, ads, and tracking stack that take cold traffic to paying customers—without guessing what works or wasting budget.
                 </p>
 
-                <button class="mt-4 btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
+                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-4 btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
                     <img src="<?php echo esc_url( $theme_dir . '/images/home/user3.png' ); ?>" width="18" alt="Google icon">
                     Enroll with Google
-                </button>
+                </a>
 
-                <button class="mt-2 btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
+                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-2 btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
                     <span class="text-dark">Enroll with email</span>
                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
                         <path d="M4 2l6 5-6 5" />
                     </svg>
-                </button>
+                </a>
 
                 <p class="small text-muted mt-2">Seats are limited—lock yours in now</p>
 
@@ -286,9 +287,9 @@ get_header();
                 Follow a proven curriculum with scripts, swipe files, and tracking templates so every campaign is set up to capture leads, retarget, and close sales.
             </p>
 
-            <button class="btn btn-dark btn-lg mt-4 shadow-sm">
+            <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg mt-4 shadow-sm">
                 Enroll now →
-            </button>
+            </a>
         </div>
 
         <div class="row g-4 mt-5">
@@ -565,8 +566,8 @@ get_header();
                 </p>
 
                 <div class="d-flex flex-wrap gap-2">
-                    <button class="btn btn-dark btn-lg shadow-sm">Enroll now →</button>
-                    <button class="btn btn-light border btn-lg">View syllabus →</button>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Enroll now →</a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">View syllabus →</a>
                 </div>
             </div>
 
@@ -619,9 +620,9 @@ get_header();
                 </h2>
 
                 <div class="mt-4">
-                    <button class="btn btn-dark btn-lg shadow-sm">
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">
                         Join the cohort →
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
