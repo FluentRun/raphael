@@ -1,101 +1,90 @@
-<?php get_header(); ?>
+<?php
+/* Template Name: Contact Us */
+get_header();
+?>
 
-    <!-- BREADCRUMBS -->
-    <div class="breadcrumbs d-none d-sm-block">
-        <div class="container">
-			<?php adsTmpl::breadcrumbs() ?>
-        </div>
-    </div>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-7">
+            <div class="card shadow p-4 p-md-5">
+                <h1 class="mb-4 fw-bold">Submit a Ticket</h1>
 
-    <!-- CONTACT-US -->
-    <div class="page-content">
-        <div class="container">
-            <h1><?php _e( 'Contact Us', 'rap' ); ?></h1>
-            <div class="row page-contact gy-5">
-                <div class="col-12 col-lg-6">
-                    <p class="d-block d-sm-none"><?php _cz('tp_contactUs_text') ?></p>
-                    <form class="contact-form row g-3" method="POST">
+                <div id="formAlert"></div>
 
-                       <div class="item col-12">
-                            <label for="nameClient" class="form-label"><?php _e( 'Your Name', 'rap' ); ?><span class="required_item">*</span></label>
-                            <input id="nameClient" type="text" name="nameClient" value="" placeholder="<?php _e( 'Your Name', 'rap' ); ?>" class="form-control form-control-lg" required="required">
-                        </div>
-                        <div  class="item col-12">
-                            <label for="email" class="form-label"><?php _e( 'Email', 'rap' ); ?><span class="required_item">*</span></label>
-                            <input id="email" type="email" name="email" value="" placeholder="<?php _e( 'Email', 'rap' ); ?>" class="form-control form-control-lg" required="required">
-                        </div>
-                        <div  class="item col-12">
-                            <label for="message" class="form-label"><?php _e( 'Message', 'rap' ); ?><span class="required_item">*</span></label>
-                            <textarea id="message" name="message" placeholder="<?php _e( 'Your Message', 'rap' ); ?>" class="form-control" rows="6" required="required"></textarea>
-                        </div>
+                <form id="ticketForm" class="row g-4">
 
-	                    <?php
-	                    $options = new \ads\adsOptions();
-	                    $args = $options->get('ads_recaptcha_options');
-	                    ?>
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">Ticket Title <span class="text-danger">*</span></label>
+                        <input type="text" name="title" class="form-control" required>
+                    </div>
 
-	                    <?php if ($args['recaptcha_status'] == 1): ?>
+                    <div class="col-12">
+                        <label class="form-label fw-semibold">Ticket Content <span class="text-danger">*</span></label>
+                        <textarea name="content" rows="5" class="form-control" required></textarea>
+                    </div>
 
-                            <div class="item col-12">
-                                <div class="wrap-g-recaptcha clearfix">
-                                    <div class="g-recaptcha" data-sitekey="<?php echo $args['recaptcha_site_key']; ?>"></div>
-                                </div>
-                                <input type="hidden" id="recaptcha" name="recaptcha">
-                            </div>
-                            <?php endif; ?>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Customer First Name</label>
+                        <input type="text" name="sender[first_name]" class="form-control">
+                    </div>
 
-                        <?php if( cz( 'cm_readonly2' ) ) : ?>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Customer Email <span class="text-danger">*</span></label>
+                        <input type="email" name="sender[email]" class="form-control" required>
+                    </div>
 
-                            <div class="item col-12 conditions-contact">
-                                <div class="form-check">
-                                    <input name="terms" value='0' type='hidden'/>
-                                    <input class="form-check-input in-conditions-contact" id="terms" name="terms" type="checkbox" value="1" />
-                                    <label class="form-check-label" for="terms"><?php echo cz( 'tp_readonly_read_required_text2' ) ?></label>
-                                </div>
-                                <div class="conditions-help errorcheck">
-                                    <span><?php echo cz( 'cm_readonly_notify2') ?></span>
-                                </div>
-                            </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-dark w-100 py-3 fw-semibold" id="submitBtn">
+                            Submit Ticket
+                        </button>
+                    </div>
 
-                        <?php endif;?>
-
-
-                        <div  class="item col-12">
-                            <button type="submit" name="contactSender" value="Send" class="btn btn-primary btn-lg"><?php _e( 'Send Message', 'rap' ); ?></button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-12 col-lg-5 offset-lg-1 address">
-                    <p class="d-none d-sm-block"><?php _cz('tp_contactUs_text') ?></p>
-					<?php if ( cz( 's_mail' ) ): ?>
-                        <p>
-                            <a href="mailto:<?php echo cz( 's_mail' ); ?>" target="_blank"> <?php echo cz( 's_mail' ); ?></a>
-                        </p>
-					<?php endif; ?>
-					<?php if ( cz( 's_link_fb_page' ) ): ?>
-                        <p><a href="<?php echo cz( 's_link_fb_page' ); ?>" target="_blank" rel="nofollow">
-                                <span class=""><i class="fa fa-facebook"></i><?php _e( 'Like Us', 'rap' ); ?></span></a>
-                        </p>
-					<?php endif; ?>
-					<?php if ( cz( 's_link_in_page' ) ): ?>
-                        <p><a href="<?php echo cz( 's_link_in_page' ); ?>" target="_blank" rel="nofollow">
-                                <span class=""><i class="fa fa-instagram"></i><?php _e( 'Find us', 'rap' ); ?></span></a>
-                        </p>
-					<?php endif; ?>
-					<?php if ( cz( 's_link_tw' ) ): ?>
-                        <p><a href="<?php echo cz( 's_link_tw' ); ?>" target="_blank" rel="nofollow">
-                                <span class=""><i class="fa fa-twitter"></i><?php _e( 'Follow Us', 'rap' ); ?></span></a>
-                        </p>
-					<?php endif; ?>
-					<?php if ( cz( 's_link_pt' ) ): ?>
-                        <p><a href="<?php echo cz( 's_link_pt' ); ?>" target="_blank" rel="nofollow">
-                                <span class=""><i class="fa fa-pinterest-p"></i><?php _e( 'Add Us', 'rap' ); ?></span></a>
-                        </p>
-					<?php endif; ?>
-                </div>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
+<script>
+document.getElementById("ticketForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const btn = document.getElementById("submitBtn");
+    const alertBox = document.getElementById("formAlert");
+    btn.disabled = true;
+    btn.textContent = "Submitting...";
+
+    const form = e.target;
+
+    const payload = {
+        title: form.title.value,
+        content: form.content.value,
+        sender: {
+            first_name: form["sender[first_name]"].value,
+            email: form["sender[email]"].value
+        }
+    };
+
+    try {
+        const res = await fetch("https://beta.webmakerr.com/wp-json/fluent-support/v2/public/incoming_webhook/3fd51a1b-3363-48e8-8d08-df7d39e5cc5e", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+        });
+
+        if (res.ok) {
+            alertBox.innerHTML = `<div class="alert alert-success">Your ticket has been created successfully.</div>`;
+            form.reset();
+        } else {
+            throw new Error();
+        }
+    } catch (err) {
+        alertBox.innerHTML = `<div class="alert alert-danger">Something went wrong. Please try again.</div>`;
+    }
+
+    btn.disabled = false;
+    btn.textContent = "Submit Ticket";
+});
+</script>
 
 <?php get_footer(); ?>
