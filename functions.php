@@ -32,6 +32,10 @@ include( __DIR__ . '/inc/breadcrumbs.php' );
 include( __DIR__ . '/inc/review.php' );
 include( __DIR__ . '/inc/instagram.php' );
 
+add_action('wp_enqueue_scripts', function () {
+    wp_enqueue_style('global-styles', get_template_directory_uri() . '/assets/css/global.css', [], '1.0');
+});
+
 
 if ( ! function_exists( 'raphael_is_item_permalink' ) ) {
         /**

@@ -21,6 +21,10 @@
     $version = $adstm_theme->get( 'Version' );
     ?>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
         <link  href="<?php echo get_template_directory_uri(); ?>/assets/css/head.css?ver=<?php echo $version; ?>" rel="stylesheet">
         <link  href="<?php echo get_template_directory_uri(); ?>/assets/css/bootstrap5-overrides.css?ver=<?php echo $version; ?>" rel="stylesheet">

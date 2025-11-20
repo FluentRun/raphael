@@ -1,0 +1,77 @@
+/* === GLOBAL MEDUSAJS STYLE SYSTEM === */
+
+/* COLORS */
+:root {
+    --color-primary: #111827;   /* Deep grey/black */
+    --color-secondary: #6B7280; /* Muted grey text */
+    --color-accent: #0F766E;    /* Teal accent */
+    --color-bg: #F9FAFB;        /* Light grey background */
+    --color-border: #E5E7EB;    /* Soft borders */
+}
+
+/* GLOBAL FONT */
+body {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif;
+    background: var(--color-bg);
+    color: var(--color-primary);
+}
+
+/* HEADINGS */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+/* PARAGRAPHS */
+p {
+    color: var(--color-secondary);
+}
+
+/* BUTTONS */
+.btn,
+button,
+input[type="submit"] {
+    background: var(--color-primary) !important;
+    border: 1px solid var(--color-primary) !important;
+    color: #fff !important;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.2s ease-in-out;
+}
+
+.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: #000 !important;
+    border-color: #000 !important;
+}
+
+/* FORM INPUTS */
+input.form-control,
+textarea.form-control,
+select.form-control,
+input,
+textarea,
+select {
+    border: 1px solid var(--color-border) !important;
+    padding: 12px 14px !important;
+    border-radius: 8px !important;
+    background: #fff !important;
+    font-size: 15px !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-primary) !important;
+    box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.15);
+}
+
+/* CARDS */
+.card {
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
