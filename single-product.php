@@ -1,321 +1,160 @@
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post() ?>
-    <?php
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              single-product.php
+<?php
+/**
+ * FluentCart Single Product Template
+ */
 
-    do_action('adstm_init_product');
-    global $ADSTM;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-    $product = $ADSTM[ 'product' ];
-    $review  = $ADSTM[ 'review' ];
-    $info    = $ADSTM[ 'info' ];
+use FluentCart\Api\Resource\ShopResource;
+use FluentCart\Api\StoreSettings;
+use FluentCart\App\Helpers\Helper;
+use FluentCart\App\Modules\Data\ProductDataSetup;
+use FluentCart\App\Services\Renderer\ProductListRenderer;
+use FluentCart\App\Services\Renderer\ProductRenderer;
+use FluentCart\Framework\Support\Arr;
 
-    $this_url = get_permalink();
-    get_header(null,[$product]);
+global $post;
 
-    get_template_part( 'template/single-product/str_data' ); ?>
+$product = $GLOBALS['fct_product'] ?? null;
 
-    <div class="breadcrumbs">
-        <div class="container">
-            <?php adsTmpl::breadcrumbs() ?>
+if (!$product && $post instanceof WP_Post) {
+    $product = ProductDataSetup::getProductModel($post->ID);
+}
+
+if (!$product || !$product->detail) {
+    the_content();
+    return;
+}
+
+$storeSettings = new StoreSettings();
+
+$renderer = new ProductRenderer($product, [
+    'view_type'   => $storeSettings->get('variation_view', 'both'),
+    'column_type' => $storeSettings->get('variation_columns', 'masonry'),
+]);
+
+$description = '';
+if ($post instanceof WP_Post) {
+    $description = apply_filters('the_content', $post->post_content);
+}
+
+$variants = [];
+if ($product->variants && !$product->variants->isEmpty()) {
+    $variants = $product->variants->sortBy('serial_index')->values();
+}
+
+?>
+<div class="fc-single-product-page fc-single-product-page--fiverr" data-fluent-cart-single-product-page>
+    <div class="fc-product-hero fc-container">
+        <div class="fc-product-hero__grid">
+            <div class="fc-product-hero__gallery" data-fluent-cart-product-gallery-area>
+                <?php $renderer->renderGallery(); ?>
+            </div>
+
+            <aside class="fc-product-hero__summary" data-fluent-cart-product-summary>
+                <div class="fc-product-summary-card" id="fc-product-summary" data-fluent-cart-sticky-summary>
+                    <?php
+                    $renderer->renderTitle();
+                    $renderer->renderStockAvailability();
+                    $renderer->renderExcerpt();
+                    $renderer->renderPrices();
+                    $renderer->renderBuySection();
+                    ?>
+                </div>
+            </aside>
         </div>
     </div>
-    <div class="product-content"
-        <?php if(isset($product[ 'gallery' ][0]['full'])){?>
-            data-mediaimg="<?php echo $product[ 'gallery' ][0]['full']?>"
-        <?php } ?>
-    >
-        <div class="container">
 
-            <?php do_action('adstm_start_form_product'); ?>
-
-            <div class="row">
-                <div class="col-12 product-content-left">
-
-                    <div class="product-main">
-                        <div class="wrap-tumb wrap-swim">
-                            <div class="js-swim">
-                                <?php if(cz('tp_show_discount')):?>
-                                    <div class="youSave" data-singleProductBox="savePercent" style="display:none;">
-                                        <span class="savePercent">-<span data-singleProduct="savePercent"></span>%</span>
-                                    </div>
-                                <?php endif;?>
-                                <?php do_action('adstm_single_gallery', $product['gallery'] ,$product[ 'video' ] ); ?>
-
-                            </div>
-                        </div>
-
-                        <div class="wrap-meta">
-                            <div class="box-padding">
-                                <h1 class="title-product"><?php the_title() ?></h1>
-
-                                <div class="rate-price">
-		                            <?php if(cz( 'tp_share' ) || cz('tp_tab_item_review')):?>
-                                        <div class="box-rate-share">
-				                            <?php if(cz('tp_tab_item_review')):?>
-                                                <div class="rate toreview">
-						                            <?php if ( $product['rate'] > 0 && $review->countFeedback() > 0 ):
-							                            echo $info->starRating(false);
-							                            printf('<div class="countFeedback"><span class="rate-info">%2$s</span> ('._n( '%s Review', '%s Reviews', $review->countFeedback(), 'rap' ).')</div>', $review->countFeedback(), $product['rate']);
-							                            ?>
-						                            <?php else: ?>
-
-                                                        <div class="no-reviews">
-                                                            <a title="<?php _e( 'Add review', 'rap' ); ?>" href="#box-feedback">
-									                            <?php _e( 'There are no reviews yet', 'rap' ); ?>
-                                                            </a>
-                                                        </div>
-
-						                            <?php endif; ?>
-                                                </div>
-				                            <?php endif; ?>
-                                            <div class="d-none d-sm-block">
-					                            <?php do_action('adstm_single_share') ?>
-                                            </div>
-                                        </div>
-		                            <?php endif; ?>
-
-                                    <div class="price-rate">
-
-                                        <div class="product-meta">
-                                            <div class="price" data-singleProductBox="price" style="display:none;">
-                                                <span class="value" data-singleProduct="price"></span>
-                                            </div>
-
-                                            <div class="salePrice" data-singleProductBox="salePrice" style="display:none;">
-                                                <span class="value" data-singleProduct="savePrice"></span>
-                                            </div>
-
-                                            <div class="box-stock-desc d-none d-sm-block">
-                                                <span style="display: none;" data-singleProduct="stock"><?php echo $product[ 'stock' ]; ?></span>
-
-					                            <?php if ($product['stock'] <= 0) : ?>
-                                                    <input class="js-single-quantity" data-singleProductInput="quantity" name="quantity" type="hidden" value="1" min="1" max="999" maxlength="3" autocomplete="off" />
-                                                    <div class="stock" data-singleProductBox="stock" itemprop="availability" href="http://schema.org/InStock">
-							                            <?php _e('Out of stock', 'rap'); ?>
-                                                    </div>
-					                            <?php elseif(cz('tp_single_stock_enabled')):?>
-                                                    <div style="display: none" class="stock" data-singleProductBox="stock" itemprop="availability" href="http://schema.org/InStock"><?php _e( 'Only', 'rap' ); ?>
-                                                        <span data-singleProduct="stock"><?php echo $product['stock']; ?></span> <?php _e( 'left in stock', 'rap' ); ?>
-                                                    </div>
-					                            <?php endif; ?>
-                                            </div>
-
-
-                                            <div class="shipping" style="display:none;">
-                                                <div class="name"><?php _e( 'Shipping', 'rap' ); ?>:</div>
-					                            <?php echo $product[ 'renderShipping' ]; ?>
-                                            </div>
-
-                                        </div>
-
-
-                                    </div>
-
-                                </div>
-
-                                <?php do_action('after_meta_info');?>
-
-		                        <?php do_action('adstm_single_sku', $product[ 'sku' ], $product[ 'skuAttr' ]) ?>
-
-                                <?php if(cz('tp_size_chart') && isset($product['sizeAttr']) && is_array($product['sizeAttr']) && isset($product['sizeAttr']['title']) && isset($product['sizeAttr']['list'])){ ?>
-                                    <div class="size_chart_cont">
-                                        <a href="" class="size_chart_btn"><?php _e( 'Size Guide', 'rap' ); ?></a>
-                                    </div>
-                                    <div class="chart_modal">
-                                        <div class="chart_modal_inner">
-                                            <div class="chart_modal_block">
-                                                <span class="chart_close"></span>
-                                                <div class="chart_table_block">
-                                                    <table class="size_chart_table">
-                                                        <tr>
-                                                            <?php foreach ($product['sizeAttr']['title'] as $k => $v){
-                                                                echo '<th>'.$v.'</th>';
-                                                            } ?>
-                                                        </tr>
-                                                        <?php foreach ($product['sizeAttr']['list'] as $k => $v){ ?>
-                                                            <tr>
-                                                                <?php foreach ($v as $v2){
-                                                                    echo '<td>'.$v2.'</td>';
-                                                                } ?>
-                                                            </tr>
-                                                        <?php } ?>
-                                                    </table>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                                
-                                <?php do_action('ads_template_single_sku_after', $post->ID);?>
-                                
-                                <div class="box-input_quantity-mobile d-block d-sm-none" style="display: none">
-	                                <?php get_template_part( 'template/single-product/meta/_input_quantity'); ?>
-                                </div>
-
-                                <div class="box-stock-mobile d-block d-sm-none">
-		                            <?php if ($product['stock'] <= 0) : ?>
-                                        <div class="stock" data-singleProductBox="stock">
-				                            <?php _e('Out of stock', 'rap'); ?>
-                                        </div>
-		                            <?php elseif(cz('tp_single_stock_enabled')):?>
-                                        <div style="display: none" class="stock" data-singleProductBox="stock"><?php _e( 'Only', 'rap' ); ?>
-                                            <span data-singleProduct="stock"><?php echo $product['stock']; ?></span> <?php _e( 'left in stock', 'rap' ); ?>
-                                        </div>
-		                            <?php endif; ?>
-                                </div>
-
-                                <div class="single-totalOrder">
-                                    <div class="box-total_price" style="display: none">
-				                        <?php get_template_part( 'template/single-product/meta/_total_price'); ?>
-                                    </div>
-
-                                    <?php do_action('ads_single_product_before_product_actions', $post->ID);?>
-
-                                    <?php if(cz('tp_single_shipping_description')):?>
-                                    <div class="info-sipping"><img src="<?php echo get_template_directory_uri(); ?>/images/single/check.svg?1000" alt=""><?php echo cz('tp_single_shipping_description'); ?></div>
-                                    <?php endif;?>
-
-                                    <div class="box-input_quantity d-none d-sm-block">
-		                                <?php get_template_part( 'template/single-product/meta/_input_quantity'); ?>
-                                    </div>
-
-                                    <?php do_action('ads_countdown_timer', adsTmpl::product('post_id'));?>
-
-                                                <?php $class = cz('add_fix') ? 'd-none d-sm-block': ''; ?>
-                                    <div class="box-btn">
-                                        <div class=">">
-		                                    <?php //TODO mobile in footer
-		                                    if ($product[ 'stock' ] != 0 ) : ?>
-                                                <div class="single-active-btn <?php echo $class;?>">
-                                                <?php
-
-                                                do_action('adstm_single_btn_add_to_cart') ?>
-                                                </div>
-		                                    <?php endif; ?>
-                                            <div class="view_cart"><?php _e('View cart', 'rap');?></div>
-		                                    <?php if(cz('tp_single_enable_payment_icons')):?>
-                                                <div class="info-secure">
-                                                    <div class="head"><span><?php echo cz('tp_single_enable_payment_text');?></span></div>
-                                                    <ul>
-	                                                    <?php
-                                                        $src = cz( 'tp_item_imgs_lazy_load' ) ? 'data-src' : 'src';
-                                                        $tmp = '<li><img '.$src.'="%s" alt=""></li>';
-	                                                    tmpCz('single_payment_icons_1', $tmp);
-	                                                    tmpCz('single_payment_icons_2', $tmp);
-	                                                    tmpCz('single_payment_icons_3', $tmp);
-	                                                    tmpCz('single_payment_icons_4', $tmp);
-	                                                    tmpCz('single_payment_icons_5', $tmp);
-	                                                    tmpCz('single_payment_icons_6', $tmp);
-	                                                    ?>
-                                                    </ul>
-                                                </div>
-		                                    <?php endif;?>
-
-
-
-
-                                        </div>
-
-                                    </div>
-                                    <div class=""><?php do_action('adstm_single_btn_express_checkout_enabled');?></div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-
-
-                </div>
+    <div class="fc-product-sections fc-container">
+        <section class="fc-product-section fc-product-section--about" id="fc-product-about">
+            <header class="fc-product-section__header">
+                <h2 class="fc-product-section__title"><?php esc_html_e('About this product', 'fluent-cart'); ?></h2>
+            </header>
+            <div class="fc-product-section__body fc-product-description">
+                <?php echo $description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
             </div>
-            <?php do_action('adstm_end_form_product'); ?>
-            <?php do_action('ads_single_product_before_content'); ?>
-            <div class="row">
+        </section>
 
-                <div class="col-12">
-                    <?php get_template_part( 'template/single-product/content' ); ?>
-                </div>
-
-                <div class="col-12 single_share-mobile d-block d-sm-none">
-                    <?php do_action('adstm_single_share') ?>
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="single_reverse">
-            <?php if(cz('tp_tab_item_review')):?>
-                <div class="container">
-
-                    <div class="row">
-
-                        <?php if(comments_open()):?>
-                            <div class="col-12">
-                                <div id="box-feedback" class="feedback-title">
-                                    <?php _cz('tp_tab_item_review_label');?>
+        <?php if (!empty($variants)) : ?>
+            <section class="fc-product-section fc-product-section--packages" id="fc-product-packages">
+                <header class="fc-product-section__header">
+                    <h2 class="fc-product-section__title"><?php esc_html_e("What's included", 'fluent-cart'); ?></h2>
+                    <p class="fc-product-section__subtitle"><?php esc_html_e('Compare packages to choose the best fit for you.', 'fluent-cart'); ?></p>
+                </header>
+                <div class="fc-product-section__body">
+                    <div class="fc-package-grid" role="list">
+                        <?php foreach ($variants as $variant) :
+                            $features = [];
+                            $featureKeys = ['features', 'deliverables', 'what_you_get', 'items'];
+                            foreach ($featureKeys as $featureKey) {
+                                $data = Arr::get($variant->other_info, $featureKey, []);
+                                if (is_string($data)) {
+                                    $data = array_filter(array_map('trim', preg_split('/[\r\n]+|,/', $data)));
+                                }
+                                if (is_array($data)) {
+                                    $features = array_merge($features, $data);
+                                }
+                            }
+                            $features = array_filter(array_unique(array_map('trim', $features)));
+                            $packageDescription = Arr::get($variant->other_info, 'description', '');
+                            ?>
+                            <article class="fc-package-card" role="listitem">
+                                <div class="fc-package-card__header">
+                                    <h3 class="fc-package-card__title"><?php echo esc_html($variant->variation_title); ?></h3>
+                                    <div class="fc-package-card__price" aria-label="<?php esc_attr_e('Package price', 'fluent-cart'); ?>">
+                                        <?php echo esc_html(Helper::toDecimal($variant->item_price)); ?>
+                                    </div>
+                                    <?php if ($variant->compare_price && $variant->compare_price > $variant->item_price) : ?>
+                                        <div class="fc-package-card__compare">
+                                            <del><?php echo esc_html(Helper::toDecimal($variant->compare_price)); ?></del>
+                                        </div>
+                                    <?php endif; ?>
                                 </div>
-                                <?php if($review->countFeedback() > 0):?>
-                                    <div class="reviews-text"><img src="<?php echo get_template_directory_uri(); ?>/images/single/verified.svg" alt=""><?php _e('Our reviews are verified for authenticity', 'rap');?></div>
-                                <?php else:;?>
-                                    <div class="reviews-text"><?php _e('There are no reviews yet', 'rap');?></div>
-                                    <span class="reviews-no starRating">
-                                <div class="stars">
-                                    <span class="star star-no"></span>
-                                    <span class="star star-no"></span>
-                                    <span class="star star-no"></span>
-                                    <span class="star star-no"></span>
-                                    <span class="star star-no"></span>
-                                </div>
-                            </span>
+                                <?php if (!empty($packageDescription)) : ?>
+                                    <p class="fc-package-card__description"><?php echo wp_kses_post($packageDescription); ?></p>
                                 <?php endif; ?>
-                                <?php get_template_part( 'template/single-product/tab/_feedback' ) ?>
-                            </div>
-                        <?php endif; ?>
-                    </div>
-
-
-                </div>
-            <?php endif; ?>
-            <?php do_action('adstm_start_loop_related_product', 6);
-
-            if ( have_posts() ) : ?>
-
-                <div class="aship-box-products list-product recommended">
-                    <div class="aship-title head">
-                        <?php _e( 'You may also love', 'rap' );?>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="">
-                                <div class="js-slider-related">
-                                    <?php while ( have_posts() ) :	the_post();
-
-                                        do_action('adstm_iterator_loop_product');
-
-                                        echo '<div class="">';
-
-                                        echo '<div class="wrap_product">';
-
-                                        do_action('adstm_product_item',  'ads-big', true);
-
-                                        echo '</div>';
-                                        echo '</div>';
-
-                                    endwhile; ?>
+                                <?php if (!empty($features)) : ?>
+                                    <ul class="fc-package-card__features">
+                                        <?php foreach ($features as $feature) : ?>
+                                            <li><?php echo esc_html($feature); ?></li>
+                                        <?php endforeach; ?>
+                                    </ul>
+                                <?php endif; ?>
+                                <div class="fc-package-card__footer">
+                                    <a class="button fc-button-link" href="#fc-product-summary" data-fluent-cart-scroll-to-summary data-variation-id="<?php echo esc_attr($variant->id); ?>">
+                                        <?php esc_html_e('View package details', 'fluent-cart'); ?>
+                                    </a>
                                 </div>
-                            </div>
-                        </div>
+                            </article>
+                        <?php endforeach; ?>
                     </div>
                 </div>
+            </section>
+        <?php endif; ?>
 
-            <?php endif;
-            do_action('adstm_end_loop_product');?>
+        <section class="fc-product-section fc-product-section--reviews" id="fc-product-reviews">
+            <header class="fc-product-section__header">
+                <h2 class="fc-product-section__title"><?php esc_html_e('Reviews', 'fluent-cart'); ?></h2>
+            </header>
+            <div class="fc-product-section__body fc-product-reviews">
+                <?php comments_template(); ?>
+            </div>
+        </section>
 
-
-        </div>
-
+        <?php
+        $relatedProducts = ShopResource::getSimilarProducts($product->ID, false);
+        $relatedList = $relatedProducts ? Arr::get($relatedProducts, 'products') : null;
+        if ($relatedList && $relatedList->count()) :
+            ob_start();
+            (new ProductListRenderer($relatedList, __('Related Products', 'fluent-cart'), 'fc-similar-product-list-container fc-product-section--related'))->render();
+            $relatedMarkup = ob_get_clean();
+            ?>
+            <section class="fc-product-section fc-product-section--related" id="fc-product-related">
+                <?php echo $relatedMarkup; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+            </section>
+        <?php endif; ?>
     </div>
-
-    <?php endwhile; endif; ?>
-
-
-<?php get_footer(); ?>
+</div>
