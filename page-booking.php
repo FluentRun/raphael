@@ -4,7 +4,12 @@
  * Template Post Type: page
  */
 
-$webhook_url = 'https://webmakerr.com/?fluentcrm=1&route=contact&hash=fb919fc9-b574-4847-8d03-014249a2767e';
+$default_booking_webhook = 'https://webmakerr.com/?fluentcrm=1&route=contact&hash=fb919fc9-b574-4847-8d03-014249a2767e';
+$webhook_url = isset( $webhook_url ) ? $webhook_url : $default_booking_webhook;
+
+if ( '' === trim( (string) $webhook_url ) ) {
+    $webhook_url = $default_booking_webhook;
+}
 
 wp_enqueue_style(
     'bootstrap-5-landing',
@@ -24,7 +29,7 @@ $theme_dir = get_template_directory_uri();
 $checkout_url = 'https://beta.webmakerr.com/?fluent-cart=instant_checkout&item_id=1&quantity=1';
 $webhook_url = trim( $webhook_url );
 
-if ( $webhook_url === 'https://webmakerr.com/?fluentcrm=1&route=contact&hash=fb919fc9-b574-4847-8d03-014249a2767e' || $webhook_url === '' ) {
+if ( $webhook_url === $default_booking_webhook || $webhook_url === '' ) {
     $webhook_url = get_post_meta( get_the_ID(), 'booking_lead_webhook_url', true );
 }
 
@@ -940,11 +945,6 @@ get_header();
                 <input type="email" class="form-control" id="bookingLeadEmail" name="email" placeholder="you@example.com" required>
             </div>
 
-            <div class="mb-4">
-                <label for="bookingLeadRequest" class="form-label">Where do you want to get the plugin?</label>
-                <input type="text" class="form-control" id="bookingLeadRequest" name="plugin_destination" placeholder="Tell us the site or platform" required>
-            </div>
-
             <button type="submit" class="btn btn-dark btn-lg w-100 d-flex align-items-center justify-content-center gap-2" data-lead-submit>
                 <span>Get Free Trail</span>
                 <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
@@ -1049,12 +1049,11 @@ get_header();
             var formData = new FormData(form);
             var nameValue = (formData.get('name') || '').trim();
             var emailValue = (formData.get('email') || '').trim();
-            var pluginRequestValue = (formData.get('plugin_destination') || '').trim();
             var emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailValue);
 
-            if (!nameValue || !emailIsValid || !pluginRequestValue) {
+            if (!nameValue || !emailIsValid) {
                 if (errorAlert) {
-                    errorAlert.textContent = 'Please add your name, a valid email, and where to send the plugin.';
+                    errorAlert.textContent = 'Please add your name and a valid email.';
                     errorAlert.classList.add('is-visible');
                 }
                 return;
@@ -1075,10 +1074,7 @@ get_header();
 
             var payload = {
                 email: emailValue,
-                first_name: nameValue,
-                fields: {
-                    plugin_request: pluginRequestValue
-                }
+                first_name: nameValue
             };
 
             fetch(webhookEndpoint, {
