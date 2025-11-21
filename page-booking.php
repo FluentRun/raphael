@@ -344,23 +344,7 @@ get_header();
                         Replace back-and-forth emails with branded booking pages that qualify visitors and lock in the best time with no double-bookings.
                     </p>
 
-                    <div class="mt-auto d-flex justify-content-center pt-3">
-                        <div class="position-relative border rounded-circle d-flex justify-content-center align-items-center" style="width: 160px; height: 160px;">
-                            <span class="position-absolute bg-white px-2 py-1 small border rounded-pill shadow">
-                                App
-                            </span>
-
-                            <span class="position-absolute top-0 translate-middle-x bg-white p-2 border rounded-circle small shadow">
-                                📅
-                            </span>
-                            <span class="position-absolute start-0 top-50 translate-middle-y bg-white p-2 border rounded-circle small shadow">
-                                🔄
-                            </span>
-                            <span class="position-absolute bottom-0 translate-middle-x bg-white p-2 border rounded-circle small shadow">
-                                📆
-                            </span>
-                        </div>
-                    </div>
+                    <img src="https://via.placeholder.com/320x160" alt="Scheduling that books itself graphic" class="mt-auto pt-3 w-100" style="height: 160px; object-fit: cover;" />
                 </div>
             </div>
 
@@ -376,30 +360,7 @@ get_header();
                         Trigger confirmations, reminders, and post-meeting nurture sequences that keep prospects engaged and reduce no-shows.
                     </p>
 
-                    <div class="mt-auto pt-3">
-                        <div class="border rounded-3 shadow-sm p-3 bg-white">
-                            <div class="d-flex justify-content-between text-dark small mb-2">
-                                <span class="d-flex align-items-center gap-2">
-                                    <span class="rounded-circle bg-dark d-inline-block" style="width: 8px; height: 8px;"></span> Mon
-                                </span>
-                                <span>8:30am – 5:00pm</span>
-                            </div>
-
-                            <div class="d-flex justify-content-between text-muted small mb-2">
-                                <span class="d-flex align-items-center gap-2">
-                                    <span class="rounded-circle bg-secondary d-inline-block opacity-50" style="width: 8px; height: 8px;"></span> Tue
-                                </span>
-                                <span>–</span>
-                            </div>
-
-                            <div class="d-flex justify-content-between text-dark small">
-                                <span class="d-flex align-items-center gap-2">
-                                    <span class="rounded-circle bg-dark d-inline-block" style="width: 8px; height: 8px;"></span> Wed
-                                </span>
-                                <span>10:00am – 7:00pm</span>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="https://via.placeholder.com/320x160" alt="Automated follow-up graphic" class="mt-auto pt-3 w-100" style="height: 160px; object-fit: cover;" />
                 </div>
             </div>
 
@@ -415,33 +376,7 @@ get_header();
                         Sync calendars, CRMs, payment gateways, and automation tools so every booking, payment, and pipeline update stays in one flow.
                     </p>
 
-                    <div class="mt-auto d-flex justify-content-center pt-3">
-                        <div class="position-relative border rounded-circle d-flex justify-content-center align-items-center" style="width: 160px; height: 160px;">
-                            <span class="position-absolute bg-white px-2 py-1 small border rounded-pill shadow">
-                                App
-                            </span>
-
-                            <span class="position-absolute top-0 translate-middle-x bg-white p-2 border rounded-circle small shadow">
-                                📅
-                            </span>
-                            <span class="position-absolute start-0 top-50 translate-middle-y bg-white p-2 border rounded-circle small shadow">
-                                🔄
-                            </span>
-                            <span class="position-absolute bottom-0 translate-middle-x bg-white p-2 border rounded-circle small shadow">
-                                📆
-                            </span>
-                            <span class="position-absolute end-0 top-50 translate-middle-y bg-white p-2 border rounded-circle small shadow">
-                                📈
-                            </span>
-
-                            <div class="text-center">
-                                <img src="https://via.placeholder.com/320x88" alt="Campaign command center placeholder graphic" class="w-100" style="height: 88px; object-fit: cover;" />
-
-                                <p class="fw-semibold small text-dark mt-2 mb-0">Campaign command center</p>
-                                <p class="text-muted small mb-0">Daily actions prioritized for ROAS</p>
-                            </div>
-                        </div>
-                    </div>
+                    <img src="https://via.placeholder.com/320x160" alt="Integrations built for revenue teams graphic" class="mt-auto pt-3 w-100" style="height: 160px; object-fit: cover;" />
 
                 </div>
             </div>
