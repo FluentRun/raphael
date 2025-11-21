@@ -226,28 +226,62 @@ get_header();
         .mobile-sticky-bar {
             display: block;
         }
+        .hero-row {
+            text-align: center;
+        }
+        .hero-copy {
+            margin: 0 auto;
+            max-width: 520px;
+        }
         .hero-info-row {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            text-align: center;
         }
         .hero-animation-shell {
-            padding: 16px;
-            min-height: 220px;
+            padding: 0;
+            min-height: 200px;
         }
         .hero-feature-card {
             padding: 14px;
         }
+        .hero-feature-card span {
+            margin-top: 8px;
+        }
         .hero-feature-card svg {
             width: 52px;
             height: 52px;
+        }
+        .hero-actions {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 0.75rem;
+        }
+        .hero-actions .btn {
+            width: 100%;
+            max-width: 320px;
+        }
+        .hero-actions .btn + .btn {
+            margin-top: 0 !important;
+        }
+        .hero-copy .badge,
+        .hero-copy .text-muted,
+        .hero-copy .d-flex {
+            justify-content: center;
+        }
+        .hero-copy .text-muted,
+        .hero-copy .hero-title,
+        .hero-copy p {
+            text-align: center;
         }
     }
 </style>
 
 <section class="pt-5 pb-5 bg-light">
     <div class="container-lg">
-        <div class="p-4 p-md-5 bg-white border rounded-4 shadow-sm row g-4 align-items-center">
-            <div class="col-lg-6">
+        <div class="p-4 p-md-5 bg-white border rounded-4 shadow-sm row g-4 align-items-center hero-row">
+            <div class="col-lg-6 hero-copy">
                 <span class="d-inline-flex align-items-center small bg-light text-secondary px-3 py-1 rounded-pill mb-3">
                     WordPress booking & scheduling automation
                     <svg width="12" height="12" class="ms-2" fill="none" stroke="currentColor" stroke-width="1.5">
@@ -263,17 +297,19 @@ get_header();
                     FluentBooking keeps calendars synchronized, collects payments, sends reminders, and routes appointments without manual back-and-forth—so teams look polished and close more revenue.
                 </p>
 
-                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-4 btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
-                    <img src="<?php echo esc_url( $theme_dir . '/images/home/user3.png' ); ?>" width="18" alt="Google icon">
-                    Connect Google Calendar
-                </a>
+                <div class="d-flex flex-wrap hero-actions mt-4">
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
+                        <img src="<?php echo esc_url( $theme_dir . '/images/home/user3.png' ); ?>" width="18" alt="Google icon">
+                        Connect Google Calendar
+                    </a>
 
-                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-2 btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
-                    <span class="text-dark">Start with email</span>
-                    <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
-                        <path d="M4 2l6 5-6 5" />
-                    </svg>
-                </a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
+                        <span class="text-dark">Start with email</span>
+                        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
+                            <path d="M4 2l6 5-6 5" />
+                        </svg>
+                    </a>
+                </div>
 
                 <p class="small text-muted mt-2">Be live in minutes—claim your onboarding slot today</p>
 
