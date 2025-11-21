@@ -213,47 +213,81 @@ get_header();
         padding: 12px 16px;
     }
 
+    .hero-section .hero-primary-btn,
+    .hero-section .hero-secondary-btn {
+        max-width: 280px;
+    }
+
     @media (max-width: 767.98px) {
+        .hero-section .hero-copy {
+            text-align: center;
+        }
+
+        .hero-section .hero-copy > *:not(:last-child) {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-section .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .hero-section .hero-primary-btn,
+        .hero-section .hero-secondary-btn {
+            width: 100%;
+            max-width: 100%;
+            justify-content: center;
+        }
+
+        .hero-section .hero-trust {
+            justify-content: center;
+        }
+
         .mobile-sticky-bar {
             display: block;
         }
     }
 </style>
 
-<section class="pt-5 pb-5 bg-light">
+<section class="pt-5 pb-5 bg-light hero-section">
     <div class="container-lg">
         <div class="p-4 p-md-5 bg-white border rounded-4 shadow-sm row g-4 align-items-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 hero-copy">
                 <span class="d-inline-flex align-items-center small bg-light text-secondary px-3 py-1 rounded-pill mb-3">
-                    Premium service • Explainer Videos that convert
+                    Premium production • Conversion-focused explainer videos
                     <svg width="12" height="12" class="ms-2" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M4 2l4 4-4 4" />
                     </svg>
                 </span>
 
                 <h1 class="fw-semibold display-5 lh-sm text-dark">
-                    Explain your product in 90 seconds. Win trust faster.<br>
+                    Turn your offer into a 90-second story that closes deals.<br>
                 </h1>
 
                 <p class="mt-3 text-secondary">
-                    We craft cinematic explainer videos that turn complex offers into crystal-clear stories—designed to lift conversions, shorten sales cycles, and give your brand credibility.
+                    We plan, script, and produce cinematic explainers that remove buyer doubt—so your team gets more demos booked, faster sales cycles, and a brand narrative that feels premium.
                 </p>
 
-                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-4 btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
+                <div class="hero-actions">
+                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-4 btn btn-dark btn-lg d-flex align-items-center gap-2 w-100 hero-primary-btn">
                     <img src="<?php echo esc_url( $theme_dir . '/images/home/user3.png' ); ?>" width="18" alt="Google icon">
-                    Get a project quote
+                    Get my video proposal
                 </a>
 
-                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-2 btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
-                    <span class="text-dark">Book a discovery call</span>
+                <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-2 btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100 hero-secondary-btn">
+                    <span class="text-dark">Schedule a 15-min strategy call</span>
                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
                         <path d="M4 2l6 5-6 5" />
                     </svg>
                 </a>
+                </div>
 
-                <p class="small text-muted mt-2">Limited productions each month—reserve your slot now</p>
+                <p class="small text-muted mt-2">We accept a limited number of productions each month to protect quality. Save your spot now.</p>
 
-                <div class="d-flex gap-4 mt-4">
+                <div class="d-flex gap-4 mt-4 hero-trust">
                     <img src="<?php echo esc_url( $theme_dir . '/images/trustf/sslupf.svg' ); ?>" height="20" alt="Trustpilot">
                     <img src="<?php echo esc_url( $theme_dir . '/images/trustf/nortonf.svg' ); ?>" height="20" alt="Google Reviews">
                 </div>
@@ -267,16 +301,16 @@ get_header();
                                 <div>
                                     <p class="fw-medium mb-1 small text-dark">Lucas Weber</p>
                                     <p class="fw-semibold text-dark mb-1">Explainer Video Strategy Session</p>
-                                    <p class="small text-muted">Discover how a tailored script, storyboard, and motion design can answer buyer doubts in seconds.</p>
+                                    <p class="small text-muted">Map the script, storyboard, and motion style that gets prospects to “I get it” within seconds.</p>
                                 </div>
                             </div>
                             <span class="badge bg-dark small px-3 py-2">Premium production</span>
                         </div>
 
                         <div class="d-flex flex-wrap gap-2 small text-muted mb-3">
-                            <span class="border rounded-pill px-3 py-1">Conversion-first concept</span>
-                            <span class="border rounded-pill px-3 py-1">Script, storyboard, voiceover</span>
-                            <span class="border rounded-pill px-3 py-1">Delivered in 14–21 days</span>
+                            <span class="border rounded-pill px-3 py-1">Concept engineered to convert</span>
+                            <span class="border rounded-pill px-3 py-1">Script, storyboard, voiceover included</span>
+                            <span class="border rounded-pill px-3 py-1">Delivery window: 14–21 days</span>
                         </div>
 
                         <div class="position-relative border rounded-3 p-3 shadow-sm hero-animation-shell">
@@ -299,15 +333,15 @@ get_header();
             </span>
 
             <h2 class="fw-semibold display-6 text-dark lh-sm">
-                Everything you need to launch a conversion-ready explainer fast
+                A conversion-ready explainer, scripted and produced end-to-end
             </h2>
 
             <p class="mt-3 text-secondary">
-                Strategy, scripting, design, and production in one place—so your team gets a high-impact video without managing freelancers or guessing the storyline.
+                We handle the research, script, storyboard, design, voiceover, and delivery—so you launch a premium video without chasing freelancers or guessing what will resonate.
             </p>
 
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg mt-4 shadow-sm">
-                Start your explainer →
+                Start my explainer →
             </a>
         </div>
 
@@ -318,10 +352,10 @@ get_header();
                         <span class="fw-bold text-secondary small">01</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Narratives that sell without sounding salesy</h5>
+                    <h5 class="fw-semibold text-dark">Narratives that make prospects feel understood</h5>
 
                     <p class="text-muted small mt-2">
-                        We distill your value into a tight storyline with a human voiceover, so prospects instantly see how you solve their problem.
+                        We distill your value into a clear storyline and voiceover that mirrors your buyer’s language, so they instantly see you solve their exact problem.
                     </p>
 
                     <div class="mt-auto d-flex justify-content-center pt-3">
@@ -350,10 +384,10 @@ get_header();
                         <span class="fw-bold text-secondary small">02</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Design that makes your product feel premium</h5>
+                    <h5 class="fw-semibold text-dark">Design that makes your product feel inevitable</h5>
 
                     <p class="text-muted small mt-2">
-                        Bold illustration, bespoke motion, and on-brand sound design so your explainer feels like a natural extension of your product experience.
+                        Bespoke illustration, motion, and sound tied to your brand system—so every scene looks like it shipped from your product team, not a template.
                     </p>
 
                     <div class="mt-auto pt-3">
@@ -389,10 +423,10 @@ get_header();
                         <span class="fw-bold text-secondary small">03</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Launch-ready for ads, sales, and onboarding</h5>
+                    <h5 class="fw-semibold text-dark">Built to plug straight into growth motions</h5>
 
                     <p class="text-muted small mt-2">
-                        Multiple aspect ratios, captions, and clear CTAs so your video plugs into paid campaigns, sales decks, and product tours on day one.
+                        Multiple aspect ratios, captions, and CTA variants so the video slots into paid campaigns, sales follow-ups, onboarding, and product tours on day one.
                     </p>
 
                     <div class="mt-auto d-flex justify-content-center pt-3">
@@ -438,7 +472,7 @@ get_header();
 <section class="py-5 bg-light">
     <div class="container-lg">
         <h2 class="text-center fw-semibold lh-sm text-dark mb-5" style="font-size: 2.5rem;">
-            ...plus every detail to ship on-brand, on time
+            Every deliverable dialed in so you launch on-brand, on schedule
         </h2>
 
         <div class="row g-4 justify-content-center">
@@ -455,14 +489,14 @@ get_header();
             ];
 
             $labels = [
-                'Messaging workshop & script',
-                'Storyboard with your brand assets',
-                'Voiceover in your tone of choice',
-                'Custom illustration & animation',
-                'Multi-language subtitles',
-                'Cut-downs for ads & socials',
-                'Performance-focused CTAs',
-                'Launch checklists for your team'
+                'Messaging & value prop workshop',
+                'Storyboards built with your product UI',
+                'Voiceover cast to match your tone',
+                'Custom illustration & motion system',
+                'Captions + multi-language subtitles',
+                'Cut-downs for ads, socials, and email',
+                'Hooks & CTAs tuned for performance',
+                'Launch checklist and organized handoff'
             ];
 
             foreach ($labels as $index => $label):
@@ -487,17 +521,17 @@ get_header();
         </span>
 
         <h2 class="fw-semibold lh-sm text-dark" style="font-size: 2.5rem;">
-            Brands turning clarity into conversions
+            Brands turning clarity into revenue
         </h2>
 
         <p class="mt-3 text-secondary small mx-auto" style="max-width: 620px;">
-            See how our explainer videos help teams answer objections, earn trust, and move buyers to a “yes” faster.
+            Explainers that disarm objections, earn trust, and speed up buying decisions—so teams see more demos booked, smoother onboarding, and higher close rates.
         </p>
 
         <div class="d-none d-md-flex justify-content-center align-items-center gap-4 mt-5">
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “The explainer distilled a complex platform into a story our prospects instantly got. Demo requests doubled within two weeks.”
+                    “They translated our platform into a story prospects finally understood. Demo requests doubled in two weeks.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -514,7 +548,7 @@ get_header();
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 420px; height: 230px;">
                 <p class="text-dark fw-semibold mb-4">
-                    “Our sales team now opens every pitch with the video. Meetings start with context, objections drop, and close rates are up 38%.”
+                    “Sales now opens every pitch with the video. Calls start with context, objections drop, and close rates are up 38%.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -531,7 +565,7 @@ get_header();
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “We dropped the video into our onboarding and support tickets fell by 27%. Customers finally understand the product in minutes.”
+                    “We dropped the video into onboarding and support tickets fell by 27%. Customers finally grasp the product in minutes.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -550,7 +584,7 @@ get_header();
         <div class="d-md-none mx-auto mt-4" style="max-width: 380px;">
             <div class="bg-white border rounded-4 shadow-sm p-4">
                 <p class="text-dark fw-semibold mb-4">
-                    “Our sales team now opens every pitch with the video. Meetings start with context, objections drop, and close rates are up 38%.”
+                    “Sales now opens every pitch with the video. Calls start with context, objections drop, and close rates are up 38%.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -577,16 +611,16 @@ get_header();
                 </span>
 
                 <h2 class="fw-semibold lh-sm text-dark mb-3" style="font-size: 2.25rem;">
-                    Guided from kickoff to launch.<br>Every step done for you.
+                    Guided from kickoff to launch.<br>Every deliverable handled for you.
                 </h2>
 
                 <p class="text-muted small mb-4" style="max-width: 420px;">
-                    Strategy call, script, storyboard, motion design, and final delivery—including revisions and multiple formats—so you launch with confidence and zero coordination headaches.
+                    Strategy call, scripting, storyboard, motion design, voiceover, revisions, and multi-format delivery—managed by one team so you launch confidently and on time.
                 </p>
 
                 <div class="d-flex flex-wrap gap-2">
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Get proposal →</a>
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">See the process →</a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Get my proposal →</a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">See the roadmap →</a>
                 </div>
             </div>
 
@@ -634,13 +668,13 @@ get_header();
 
             <div class="position-relative" style="z-index:2;">
                 <h2 class="fw-semibold lh-sm text-dark mx-auto" style="font-size: 2.25rem; max-width: 700px;">
-                    Ready for an explainer that sells for you?
-                    <br class="d-none d-sm-block">Secure your production window before this month fills up.
+                    Ready for an explainer that closes the deal for you?
+                    <br class="d-none d-sm-block">Reserve your production slot before this month fills up.
                 </h2>
 
                 <div class="mt-4">
                     <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">
-                        Book your explainer →
+                        Reserve my explainer →
                     </a>
                 </div>
             </div>
@@ -652,10 +686,10 @@ get_header();
     <div class="container-lg">
         <div class="d-flex gap-2">
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg w-100">
-                Start your video
+                Start my explainer
             </a>
             <a href="/contact-us" class="btn btn-light border btn-lg w-100 text-dark">
-                Talk to us
+                Chat with a producer
             </a>
         </div>
     </div>
