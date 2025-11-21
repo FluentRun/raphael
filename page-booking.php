@@ -705,32 +705,16 @@ get_header();
             </div>
 
             <div class="col-md-7">
-                <div class="border rounded-3 overflow-hidden">
-                    <div class="row g-0">
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end border-bottom p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/visa.svg' ); ?>" class="opacity-75" width="40" alt="Slack">
-                        </div>
-
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end border-bottom p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/master_card.svg' ); ?>" class="opacity-75" width="80" alt="Zapier">
-                        </div>
-
-                        <div class="col-4 d-flex justify-content-center align-items-center border-bottom p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/american_express.svg' ); ?>" class="opacity-75" width="55" alt="Stripe">
-                        </div>
-                    </div>
-
-                    <div class="row g-0">
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/discover.svg' ); ?>" class="opacity-75" width="60" alt="HubSpot">
-                        </div>
-
-                        <div class="col-4 d-flex justify-content-center align-items-center border-end p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/paypal.svg' ); ?>" class="opacity-75" width="55" alt="Outlook">
-                        </div>
-
-                        <div class="col-4 d-flex justify-content-center align-items-center p-4" style="height:120px;">
-                            <img src="<?php echo esc_url( $theme_dir . '/images/payment_methods/visa.svg' ); ?>" class="opacity-75" width="40" alt="Slack">
+                <div class="bg-white border rounded-4 shadow-sm overflow-hidden">
+                    <div class="p-4 p-md-5">
+                        <div class="ratio ratio-16x9 rounded-3 overflow-hidden border" style="--bs-border-opacity: 0.35;">
+                            <video
+                                class="w-100 h-100"
+                                src="https://cdn.webmakerr.com/website/booking-footer.mp4"
+                                style="object-fit: cover;"
+                                controls
+                                playsinline
+                            ></video>
                         </div>
                     </div>
                 </div>
