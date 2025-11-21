@@ -4,7 +4,7 @@
  * Template Post Type: page
  */
 
-$webhook_url = 'PASTE_WEBHOOK_URL_HERE';
+$webhook_url = 'https://webmakerr.com/?fluentcrm=1&route=contact&hash=fb919fc9-b574-4847-8d03-014249a2767e';
 
 wp_enqueue_style(
     'bootstrap-5-landing',
@@ -24,7 +24,7 @@ $theme_dir = get_template_directory_uri();
 $checkout_url = 'https://beta.webmakerr.com/?fluent-cart=instant_checkout&item_id=1&quantity=1';
 $webhook_url = trim( $webhook_url );
 
-if ( $webhook_url === 'PASTE_WEBHOOK_URL_HERE' || $webhook_url === '' ) {
+if ( $webhook_url === 'https://webmakerr.com/?fluentcrm=1&route=contact&hash=fb919fc9-b574-4847-8d03-014249a2767e' || $webhook_url === '' ) {
     $webhook_url = get_post_meta( get_the_ID(), 'booking_lead_webhook_url', true );
 }
 
