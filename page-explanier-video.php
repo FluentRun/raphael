@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Facebook Ads Course Landing
+ * Template Name: Explainer Video Service Landing
  * Template Post Type: page
  */
 
@@ -225,33 +225,33 @@ get_header();
         <div class="p-4 p-md-5 bg-white border rounded-4 shadow-sm row g-4 align-items-center">
             <div class="col-lg-6">
                 <span class="d-inline-flex align-items-center small bg-light text-secondary px-3 py-1 rounded-pill mb-3">
-                    New cohort • Facebook Ads Mastery
+                    Premium service • Explainer Videos that convert
                     <svg width="12" height="12" class="ms-2" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M4 2l4 4-4 4" />
                     </svg>
                 </span>
 
                 <h1 class="fw-semibold display-5 lh-sm text-dark">
-                    Turn Facebook Ads into predictable revenue.<br>
+                    Explain your product in 90 seconds. Win trust faster.<br>
                 </h1>
 
                 <p class="mt-3 text-secondary">
-                    Learn the exact playbooks, ads, and tracking stack that take cold traffic to paying customers—without guessing what works or wasting budget.
+                    We craft cinematic explainer videos that turn complex offers into crystal-clear stories—designed to lift conversions, shorten sales cycles, and give your brand credibility.
                 </p>
 
                 <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-4 btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
                     <img src="<?php echo esc_url( $theme_dir . '/images/home/user3.png' ); ?>" width="18" alt="Google icon">
-                    Enroll with Google
+                    Get a project quote
                 </a>
 
                 <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-2 btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
-                    <span class="text-dark">Enroll with email</span>
+                    <span class="text-dark">Book a discovery call</span>
                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
                         <path d="M4 2l6 5-6 5" />
                     </svg>
                 </a>
 
-                <p class="small text-muted mt-2">Seats are limited—lock yours in now</p>
+                <p class="small text-muted mt-2">Limited productions each month—reserve your slot now</p>
 
                 <div class="d-flex gap-4 mt-4">
                     <img src="<?php echo esc_url( $theme_dir . '/images/trustf/sslupf.svg' ); ?>" height="20" alt="Trustpilot">
@@ -265,18 +265,18 @@ get_header();
                             <div class="d-flex gap-3">
                                 <img src="<?php echo esc_url( $theme_dir . '/images/home/user2.png' ); ?>" class="rounded-circle" width="48" height="48" alt="Profile">
                                 <div>
-                                    <p class="fw-medium mb-1 small text-dark">Isabella Valce</p>
-                                    <p class="fw-semibold text-dark mb-1">Facebook Ads Strategy Call</p>
-                                    <p class="small text-muted">See how the course frameworks turn ad spend into scheduled sales conversations every week.</p>
+                                    <p class="fw-medium mb-1 small text-dark">Lucas Weber</p>
+                                    <p class="fw-semibold text-dark mb-1">Explainer Video Strategy Session</p>
+                                    <p class="small text-muted">Discover how a tailored script, storyboard, and motion design can answer buyer doubts in seconds.</p>
                                 </div>
                             </div>
-                            <span class="badge bg-dark small px-3 py-2">Live cohort</span>
+                            <span class="badge bg-dark small px-3 py-2">Premium production</span>
                         </div>
 
                         <div class="d-flex flex-wrap gap-2 small text-muted mb-3">
-                            <span class="border rounded-pill px-3 py-1">90-min blueprint</span>
-                            <span class="border rounded-pill px-3 py-1">Live online</span>
-                            <span class="border rounded-pill px-3 py-1">Recorded &amp; reusable</span>
+                            <span class="border rounded-pill px-3 py-1">Conversion-first concept</span>
+                            <span class="border rounded-pill px-3 py-1">Script, storyboard, voiceover</span>
+                            <span class="border rounded-pill px-3 py-1">Delivered in 14–21 days</span>
                         </div>
 
                         <div class="position-relative border rounded-3 p-3 shadow-sm hero-animation-shell">
@@ -295,19 +295,19 @@ get_header();
     <div class="container-lg">
         <div class="text-center mx-auto" style="max-width: 700px;">
             <span class="d-inline-flex align-items-center bg-white border px-3 py-1 rounded-pill text-secondary small shadow-sm mb-3">
-                Inside the course
+                What you get
             </span>
 
             <h2 class="fw-semibold display-6 text-dark lh-sm">
-                Everything you need to launch profitable Facebook ads fast
+                Everything you need to launch a conversion-ready explainer fast
             </h2>
 
             <p class="mt-3 text-secondary">
-                Follow a proven curriculum with scripts, swipe files, and tracking templates so every campaign is set up to capture leads, retarget, and close sales.
+                Strategy, scripting, design, and production in one place—so your team gets a high-impact video without managing freelancers or guessing the storyline.
             </p>
 
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg mt-4 shadow-sm">
-                Enroll now →
+                Start your explainer →
             </a>
         </div>
 
@@ -318,10 +318,10 @@ get_header();
                         <span class="fw-bold text-secondary small">01</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Ad campaigns built to convert</h5>
+                    <h5 class="fw-semibold text-dark">Narratives that sell without sounding salesy</h5>
 
                     <p class="text-muted small mt-2">
-                        Deploy winning creatives, copy, and audiences with our swipe files so every ad drives qualified traffic from day one.
+                        We distill your value into a tight storyline with a human voiceover, so prospects instantly see how you solve their problem.
                     </p>
 
                     <div class="mt-auto d-flex justify-content-center pt-3">
@@ -350,10 +350,10 @@ get_header();
                         <span class="fw-bold text-secondary small">02</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Offer funnels that scale</h5>
+                    <h5 class="fw-semibold text-dark">Design that makes your product feel premium</h5>
 
                     <p class="text-muted small mt-2">
-                        Plug in landing pages, lead magnets, and upsell flows that are already pressure-tested to turn clicks into customers.
+                        Bold illustration, bespoke motion, and on-brand sound design so your explainer feels like a natural extension of your product experience.
                     </p>
 
                     <div class="mt-auto pt-3">
@@ -389,10 +389,10 @@ get_header();
                         <span class="fw-bold text-secondary small">03</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Tracking and optimization dialed in</h5>
+                    <h5 class="fw-semibold text-dark">Launch-ready for ads, sales, and onboarding</h5>
 
                     <p class="text-muted small mt-2">
-                        Pixel setups, UTM tracking, dashboards, and weekly optimization checklists so you know exactly what to scale or kill.
+                        Multiple aspect ratios, captions, and clear CTAs so your video plugs into paid campaigns, sales decks, and product tours on day one.
                     </p>
 
                     <div class="mt-auto d-flex justify-content-center pt-3">
@@ -423,8 +423,8 @@ get_header();
                                     <path d="M32 48h20" stroke="black" stroke-width="2.5" />
                                 </svg>
 
-                                <p class="fw-semibold small text-dark mt-2 mb-0">Campaign command center</p>
-                                <p class="text-muted small mb-0">Daily actions prioritized for ROAS</p>
+                                <p class="fw-semibold small text-dark mt-2 mb-0">Storytelling built for conversions</p>
+                                <p class="text-muted small mb-0">Every frame engineered to move buyers</p>
                             </div>
                         </div>
                     </div>
@@ -438,7 +438,7 @@ get_header();
 <section class="py-5 bg-light">
     <div class="container-lg">
         <h2 class="text-center fw-semibold lh-sm text-dark mb-5" style="font-size: 2.5rem;">
-            ...plus every shortcut to scale faster
+            ...plus every detail to ship on-brand, on time
         </h2>
 
         <div class="row g-4 justify-content-center">
@@ -455,14 +455,14 @@ get_header();
             ];
 
             $labels = [
-                'High-converting ad templates',
-                'Live weekly coaching',
-                'Proven hooks and headlines',
-                'Budget and bid calculators',
-                'Retargeting scripts',
-                'Plug-and-play landing pages',
-                'Data-backed testing plan',
-                'Checklists for every launch'
+                'Messaging workshop & script',
+                'Storyboard with your brand assets',
+                'Voiceover in your tone of choice',
+                'Custom illustration & animation',
+                'Multi-language subtitles',
+                'Cut-downs for ads & socials',
+                'Performance-focused CTAs',
+                'Launch checklists for your team'
             ];
 
             foreach ($labels as $index => $label):
@@ -483,21 +483,21 @@ get_header();
 <section class="py-5 bg-light">
     <div class="container-lg text-center">
         <span class="d-inline-flex align-items-center bg-white border px-3 py-1 rounded-pill text-secondary small shadow-sm mb-3">
-            Student results
+            Client results
         </span>
 
         <h2 class="fw-semibold lh-sm text-dark" style="font-size: 2.5rem;">
-            Marketers turning ads into revenue
+            Brands turning clarity into conversions
         </h2>
 
         <p class="mt-3 text-secondary small mx-auto" style="max-width: 620px;">
-            See how the Facebook Ads course helped founders and growth teams launch profitable campaigns without guesswork.
+            See how our explainer videos help teams answer objections, earn trust, and move buyers to a “yes” faster.
         </p>
 
         <div class="d-none d-md-flex justify-content-center align-items-center gap-4 mt-5">
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “The launch templates let us ship three winning campaigns in week one. Our cost per lead dropped 42% without hiring an agency.”
+                    “The explainer distilled a complex platform into a story our prospects instantly got. Demo requests doubled within two weeks.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -514,7 +514,7 @@ get_header();
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 420px; height: 230px;">
                 <p class="text-dark fw-semibold mb-4">
-                    “Following the weekly optimization checklist took us to 3.1x ROAS in 30 days. The offer tweaks alone paid for the course in a weekend.”
+                    “Our sales team now opens every pitch with the video. Meetings start with context, objections drop, and close rates are up 38%.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -531,7 +531,7 @@ get_header();
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “The retargeting scripts and email automations filled the gaps in our funnel. Every ad click now gets a personalized follow-up sequence.”
+                    “We dropped the video into our onboarding and support tickets fell by 27%. Customers finally understand the product in minutes.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -550,7 +550,7 @@ get_header();
         <div class="d-md-none mx-auto mt-4" style="max-width: 380px;">
             <div class="bg-white border rounded-4 shadow-sm p-4">
                 <p class="text-dark fw-semibold mb-4">
-                    “Following the weekly optimization checklist took us to 3.1x ROAS in 30 days. The offer tweaks alone paid for the course in a weekend.”
+                    “Our sales team now opens every pitch with the video. Meetings start with context, objections drop, and close rates are up 38%.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -573,20 +573,20 @@ get_header();
         <div class="bg-white border rounded-4 shadow-sm p-4 p-md-5 row g-4 align-items-center">
             <div class="col-md-5 d-flex flex-column">
                 <span class="d-inline-flex align-items-center bg-white border px-3 py-1 rounded-pill text-secondary small shadow-sm mb-3">
-                    Curriculum
+                    Production roadmap
                 </span>
 
                 <h2 class="fw-semibold lh-sm text-dark mb-3" style="font-size: 2.25rem;">
-                    Learn the system.<br>Apply it the same day.
+                    Guided from kickoff to launch.<br>Every step done for you.
                 </h2>
 
                 <p class="text-muted small mb-4" style="max-width: 420px;">
-                    Every module includes walkthroughs, worksheets, and live examples so you can launch, measure, and scale campaigns without pausing to Google what to do next.
+                    Strategy call, script, storyboard, motion design, and final delivery—including revisions and multiple formats—so you launch with confidence and zero coordination headaches.
                 </p>
 
                 <div class="d-flex flex-wrap gap-2">
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Enroll now →</a>
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">View syllabus →</a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Get proposal →</a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">See the process →</a>
                 </div>
             </div>
 
@@ -634,13 +634,13 @@ get_header();
 
             <div class="position-relative" style="z-index:2;">
                 <h2 class="fw-semibold lh-sm text-dark mx-auto" style="font-size: 2.25rem; max-width: 700px;">
-                    Claim your seat in Facebook Ads Mastery
-                    <br class="d-none d-sm-block">Bonuses disappear when the cohort fills.
+                    Ready for an explainer that sells for you?
+                    <br class="d-none d-sm-block">Secure your production window before this month fills up.
                 </h2>
 
                 <div class="mt-4">
                     <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">
-                        Join the cohort →
+                        Book your explainer →
                     </a>
                 </div>
             </div>
@@ -652,10 +652,10 @@ get_header();
     <div class="container-lg">
         <div class="d-flex gap-2">
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg w-100">
-                Order Now
+                Start your video
             </a>
             <a href="/contact-us" class="btn btn-light border btn-lg w-100 text-dark">
-                Contact Us
+                Talk to us
             </a>
         </div>
     </div>
