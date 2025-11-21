@@ -7,14 +7,41 @@ get_header();
 ?>
 
 <style>
+    :root {
+        --contact-radius: 4px;
+        --contact-border: 1px solid #e7edf5;
+    }
+
     .contact-hero {
         background: linear-gradient(120deg, #f8fbff 0%, #f6fff9 100%);
+        border-radius: var(--contact-radius);
+        overflow: hidden;
     }
 
     .contact-card,
     .contact-note,
-    .faq-card {
-        border-radius: 12px;
+    .faq-card,
+    .contact-form-card,
+    .contact-metric,
+    .accordion-item,
+    .accordion-button {
+        border-radius: var(--contact-radius) !important;
+    }
+
+    .contact-card,
+    .faq-card,
+    .contact-metric,
+    .contact-form-card {
+        border: var(--contact-border);
+    }
+
+    .contact-card {
+        background-color: #ffffff;
+    }
+
+    .contact-note {
+        background: #f7fbff;
+        border: var(--contact-border);
     }
 
     .contact-bullet svg {
@@ -37,12 +64,11 @@ get_header();
 
     .contact-metric {
         border: 1px solid #e7f5ef;
-        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(12, 69, 45, 0.05);
     }
 
     .contact-form-card {
-        border-radius: 16px;
-        border: 1px solid #ecf1f7;
+        box-shadow: 0 12px 40px rgba(0, 33, 71, 0.08);
     }
 
     .contact-form-card .form-label {
@@ -50,26 +76,65 @@ get_header();
         color: #0b1727;
     }
 
+    .contact-form-card .form-control,
+    .contact-form-card textarea {
+        border-radius: var(--contact-radius);
+        padding: 12px 14px;
+    }
+
+    .contact-form-card .form-control:focus,
+    .contact-form-card textarea:focus,
+    .accordion-button:focus {
+        border-color: #20c997;
+        box-shadow: 0 0 0 0.2rem rgba(32, 201, 151, 0.15);
+    }
+
+    .contact-form-card .btn {
+        border-radius: var(--contact-radius);
+        box-shadow: 0 12px 30px rgba(32, 201, 151, 0.25);
+    }
+
     .faq-card .accordion-item {
-        border-radius: 12px !important;
         overflow: hidden;
         border: 1px solid #ecf1f7;
     }
 
     .faq-card .accordion-button {
-        border-radius: 12px !important;
+        padding: 16px 18px;
+    }
+
+    .faq-card .accordion-button:not(.collapsed) {
+        background-color: #f6fff9;
+        color: #0f5132;
+        box-shadow: none;
+    }
+
+    .contact-bullet span {
+        width: 36px;
+        height: 36px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: #f3faf6;
+        border-radius: 50%;
+    }
+
+    .contact-metrics {
+        gap: 16px;
+    }
+
+    .contact-list li {
+        align-items: flex-start;
+    }
+
+    .contact-list strong {
+        display: block;
+        margin-bottom: 4px;
     }
 
     @media (max-width: 767.98px) {
         .contact-hero {
             padding-top: 2.75rem !important;
-        }
-
-        .contact-card,
-        .contact-form-card,
-        .faq-card,
-        .contact-note {
-            border-radius: 14px;
         }
 
         .contact-metrics {
@@ -108,12 +173,12 @@ get_header();
                         <div class="d-flex justify-content-between align-items-start flex-wrap gap-2 mb-4">
                             <div>
                                 <span class="contact-pill">Support ticket</span>
-                                <h2 class="h4 fw-bold mt-3 mb-0">Tell us how we can help</h2>
-                                <p class="text-secondary small mb-0">Dedicated partnership support with fast, actionable replies.</p>
+                                <h2 class="h4 fw-bold mt-3 mb-1">Tell us how we can help</h2>
+                                <p class="text-secondary small mb-0">Share your goal and we will guide you to the fastest, most effective next step.</p>
                             </div>
                             <div class="text-success fw-semibold small">Average response &lt; 24 hours</div>
                         </div>
-                        <div id="formAlert" class="mb-3"></div>
+                        <div id="formAlert" class="mb-3" aria-live="polite"></div>
                         <form id="ticketForm" class="row g-4">
                             <div class="col-md-6">
                                 <label class="form-label fw-semibold">First Name</label>
@@ -137,13 +202,13 @@ get_header();
                                 </button>
                             </div>
                             <div class="col-12">
-                                <div class="d-flex flex-wrap align-items-center gap-2 text-secondary small contact-note p-3 bg-light">
+                                <div class="d-flex flex-wrap align-items-center gap-3 text-secondary small contact-note p-3 bg-light">
                                     <span class="text-success">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                             <path d="M2 2.5A1.5 1.5 0 0 1 3.5 1h9A1.5 1.5 0 0 1 14 2.5v11a.5.5 0 0 1-.777.416L8 10.101l-5.223 3.815A.5.5 0 0 1 2 13.5z"></path>
                                         </svg>
                                     </span>
-                                    <span>We only use your details to respond to this request and will confirm once your ticket is created.</span>
+                                    <span><strong class="text-dark d-block">Your request stays private.</strong> We only use your details to respond and will confirm as soon as your ticket is created.</span>
                                 </div>
                             </div>
                         </form>
@@ -154,7 +219,7 @@ get_header();
                 <div class="d-flex flex-column gap-3">
                     <div class="contact-pill align-self-start">Contact Us</div>
                     <h1 class="display-5 fw-bold lh-sm mb-2">Partner with our team</h1>
-                    <p class="fs-5 text-secondary mb-3">Share your request and a member of our partnerships desk will reach out with the next steps. We keep communication concise, transparent, and focused on solving your needs.</p>
+                    <p class="fs-5 text-secondary mb-3">Share your request and a member of our partnerships desk will respond with a clear plan. Expect concise updates, transparent timelines, and outcomes that move your goals forward.</p>
                     <div class="d-grid gap-3 contact-metrics contact-trust" style="grid-template-columns: repeat(2, minmax(0, 1fr));">
                         <div class="p-3 bg-white shadow-sm h-100 border contact-card">
                             <div class="d-flex align-items-center gap-2 fw-semibold mb-1">
@@ -179,7 +244,7 @@ get_header();
                             <p class="mb-0 text-secondary small">Your inquiry is handled by the right subject-matter expert from the start.</p>
                         </div>
                     </div>
-                    <div class="d-flex flex-column gap-2 text-secondary small">
+                    <div class="d-flex flex-column gap-3 text-secondary small">
                         <div class="d-flex align-items-center gap-2 contact-bullet">
                             <span class="text-success">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -218,7 +283,7 @@ get_header();
                 <div class="p-4 p-md-5 shadow-sm border bg-light contact-card">
                     <p class="text-uppercase text-secondary small fw-semibold mb-2">Guidance</p>
                     <h2 class="h4 fw-bold mb-3">What to expect</h2>
-                    <ul class="list-unstyled d-flex flex-column gap-3 text-secondary mb-0">
+                    <ul class="list-unstyled d-flex flex-column gap-3 text-secondary mb-0 contact-list">
                         <li class="d-flex gap-3">
                             <span class="text-success mt-1">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
