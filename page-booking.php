@@ -412,7 +412,7 @@ get_header();
                         Sync calendars, CRMs, payment gateways, and automation tools so every booking, payment, and pipeline update stays in one flow.
                     </p>
 
-                    <img src="https://via.placeholder.com/320x160" alt="Integrations built for revenue teams graphic" class="mt-auto pt-3 w-100" style="height: 250px; object-fit: cover;" />
+                    <img src="https://alidrives.b-cdn.net/website/booking3.png" alt="Integrations built for revenue teams graphic" class="mt-auto pt-3 w-100" style="height: 250px; object-fit: cover;" />
 
                 </div>
             </div>
