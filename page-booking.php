@@ -329,30 +329,38 @@ get_header();
 
     .trial-modal {
         width: 100%;
-        max-width: 520px;
-        background: #ffffff;
-        border-radius: 12px;
-        border: 1px solid #e5e7eb;
-        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+        max-width: 640px;
+        background: linear-gradient(160deg, #0f172a 0%, #111827 40%, #0b1224 100%);
+        border-radius: 16px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 28px 80px rgba(15, 23, 42, 0.35);
         position: relative;
         overflow: hidden;
+        color: #e2e8f0;
     }
 
     .trial-modal::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at 20% 20%, rgba(24, 119, 242, 0.08), transparent 40%),
-            radial-gradient(circle at 80% 0%, rgba(0, 0, 0, 0.05), transparent 35%);
+        background:
+            radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.14), transparent 38%),
+            radial-gradient(circle at 80% 10%, rgba(16, 185, 129, 0.12), transparent 36%),
+            linear-gradient(120deg, rgba(148, 163, 184, 0.12), rgba(15, 23, 42, 0));
         pointer-events: none;
     }
 
+    .trial-modal__inner {
+        position: relative;
+        z-index: 2;
+    }
+
     .trial-modal__header {
-        padding: 20px 24px 0;
+        padding: 28px 28px 0;
     }
 
     .trial-modal__body {
-        padding: 16px 24px 24px;
+        padding: 20px 28px 28px;
         position: relative;
         z-index: 2;
     }
@@ -362,24 +370,25 @@ get_header();
         top: 14px;
         right: 14px;
         border: none;
-        background: rgba(0, 0, 0, 0.04);
+        background: rgba(255, 255, 255, 0.06);
         width: 38px;
         height: 38px;
         border-radius: 12px;
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        color: #0f172a;
+        color: #e2e8f0;
         transition: background-color 150ms ease, transform 150ms ease;
+        border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     .trial-modal__close:hover {
-        background: rgba(0, 0, 0, 0.08);
+        background: rgba(255, 255, 255, 0.12);
         transform: translateY(-1px);
     }
 
     .trial-modal__subtitle {
-        color: #475467;
+        color: #cbd5e1;
     }
 
     .trial-modal__status {
@@ -389,6 +398,116 @@ get_header();
 
     .trial-modal__status.is-visible {
         display: block;
+    }
+
+    .trial-modal__pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.06);
+        color: #e2e8f0;
+        font-size: 0.92rem;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .trial-modal__pill svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .trial-modal__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 18px;
+        margin-top: 18px;
+    }
+
+    .trial-modal__card {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 12px;
+        padding: 12px 14px;
+        color: #e2e8f0;
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .trial-modal__icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, rgba(59, 130, 246, 0.22), rgba(16, 185, 129, 0.22));
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .trial-modal__icon svg {
+        width: 18px;
+        height: 18px;
+        color: #e2e8f0;
+    }
+
+    .trial-modal__card h6 {
+        margin: 0 0 4px;
+        color: #f8fafc;
+    }
+
+    .trial-modal__card p {
+        margin: 0;
+        color: #cbd5e1;
+        font-size: 0.95rem;
+    }
+
+    .trial-modal__form {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 18px;
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.25);
+    }
+
+    .trial-modal__form label {
+        color: #0f172a;
+    }
+
+    .trial-modal__form .form-control {
+        border-radius: 12px;
+        border: 1px solid #e2e8f0;
+        padding: 12px 14px;
+        font-size: 1rem;
+        box-shadow: none;
+        transition: border-color 150ms ease, box-shadow 150ms ease;
+    }
+
+    .trial-modal__form .form-control:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+    }
+
+    .trial-modal__form .btn {
+        border-radius: 12px;
+        padding: 12px;
+        font-weight: 600;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.22);
+    }
+
+    @media (max-width: 575.98px) {
+        .trial-modal {
+            border-radius: 14px;
+        }
+
+        .trial-modal__header,
+        .trial-modal__body {
+            padding: 18px 16px 0;
+        }
+
+        .trial-modal__body {
+            padding-bottom: 18px;
+        }
     }
 </style>
 
@@ -478,36 +597,71 @@ get_header();
             </svg>
         </button>
 
-        <div class="trial-modal__header">
-            <p class="small text-uppercase text-muted fw-semibold mb-1">Free trial access</p>
-            <h3 class="fw-semibold text-dark mb-1">Book your FluentBooking trial</h3>
-            <p class="trial-modal__subtitle small mb-0">Tell us where to send your onboarding link.</p>
-        </div>
+        <div class="trial-modal__inner">
+            <div class="trial-modal__header">
+                <span class="trial-modal__pill">
+                    <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <path d="M4 10.5l3 3 9-9" />
+                    </svg>
+                    Verified onboarding request
+                </span>
+                <h3 class="fw-semibold text-white mt-3 mb-1" style="font-size: 1.6rem;">Try Our Booking Plugin</h3>
+                <p class="trial-modal__subtitle small mb-0">Tell us where to send your onboarding link and setup steps.</p>
+            </div>
 
-        <div class="trial-modal__body">
-            <form id="freeTrialForm" class="needs-validation" novalidate>
-                <div class="mb-3">
-                    <label for="trialName" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="trialName" name="trialName" placeholder="Jane Doe" required>
+            <div class="trial-modal__body">
+                <div class="trial-modal__grid">
+                    <div class="trial-modal__card">
+                        <span class="trial-modal__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M8 7h8M8 12h8M8 17h5M5 21h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2z" />
+                            </svg>
+                        </span>
+                        <div>
+                            <h6 class="fw-semibold">Priority onboarding</h6>
+                            <p class="mb-0">We reserve a specialist to configure calendars, reminders, and payments for you.</p>
+                        </div>
+                    </div>
+
+                    <div class="trial-modal__card">
+                        <span class="trial-modal__icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                                <path d="M12 21c4.97 0 9-3.582 9-8s-4.03-8-9-8-9 3.582-9 8c0 2.386 1.086 4.54 2.842 6.036L5 21l2.512-1.257C9 20.563 10.455 21 12 21z" />
+                            </svg>
+                        </span>
+                        <div>
+                            <h6 class="fw-semibold">White-glove support</h6>
+                            <p class="mb-0">Real humans guide you through installation and answer every question in minutes.</p>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="mb-3">
-                    <label for="trialEmail" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="trialEmail" name="trialEmail" placeholder="you@company.com" required>
-                </div>
+                <div class="trial-modal__form mt-3">
+                    <form id="freeTrialForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label for="trialName" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="trialName" name="trialName" placeholder="Jane Doe" required>
+                        </div>
 
-                <button type="submit" class="btn btn-dark btn-lg w-100 d-flex justify-content-center align-items-center gap-2" data-trial-submit>
-                    <span>Submit</span>
-                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" data-trial-spinner></span>
-                </button>
+                        <div class="mb-3">
+                            <label for="trialEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="trialEmail" name="trialEmail" placeholder="you@company.com" required>
+                        </div>
 
-                <div class="alert alert-success trial-modal__status mt-3" role="status" data-trial-success>
-                    Thanks! Your request has been received. Check your inbox for next steps.
+                        <button type="submit" class="btn btn-dark btn-lg w-100 d-flex justify-content-center align-items-center gap-2" data-trial-submit>
+                            <span>Submit</span>
+                            <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" data-trial-spinner></span>
+                        </button>
+
+                        <div class="alert alert-success trial-modal__status mt-3" role="status" data-trial-success>
+                            Thanks! Your request has been received. Check your inbox for next steps.
+                        </div>
+                        <div class="alert alert-danger trial-modal__status mt-3" role="alert" data-trial-error>
+                            Something went wrong. Please try again in a moment.
+                        </div>
+                    </form>
                 </div>
-                <div class="alert alert-danger trial-modal__status mt-3" role="alert" data-trial-error>
-                    Something went wrong. Please try again in a moment.
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
