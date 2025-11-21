@@ -344,7 +344,7 @@ get_header();
                         Replace back-and-forth emails with branded booking pages that qualify visitors and lock in the best time with no double-bookings.
                     </p>
 
-                    <img src="https://cdn.webmakerr.com/website/booking1.png" alt="Scheduling that books itself graphic" class="mt-auto pt-3 w-100" style="height: 160px; object-fit: cover;" />
+                    <img src="https://cdn.webmakerr.com/website/booking1.png" alt="Scheduling that books itself graphic" class="mt-auto pt-3 w-100" style="height: 250px; object-fit: cover;" />
                 </div>
             </div>
 
@@ -360,7 +360,7 @@ get_header();
                         Trigger confirmations, reminders, and post-meeting nurture sequences that keep prospects engaged and reduce no-shows.
                     </p>
 
-                    <img src="https://via.placeholder.com/320x160" alt="Automated follow-up graphic" class="mt-auto pt-3 w-100" style="height: 160px; object-fit: cover;" />
+                    <img src="https://via.placeholder.com/320x160" alt="Automated follow-up graphic" class="mt-auto pt-3 w-100" style="height: 250px; object-fit: cover;" />
                 </div>
             </div>
 
@@ -376,7 +376,7 @@ get_header();
                         Sync calendars, CRMs, payment gateways, and automation tools so every booking, payment, and pipeline update stays in one flow.
                     </p>
 
-                    <img src="https://via.placeholder.com/320x160" alt="Integrations built for revenue teams graphic" class="mt-auto pt-3 w-100" style="height: 160px; object-fit: cover;" />
+                    <img src="https://via.placeholder.com/320x160" alt="Integrations built for revenue teams graphic" class="mt-auto pt-3 w-100" style="height: 250px; object-fit: cover;" />
 
                 </div>
             </div>
