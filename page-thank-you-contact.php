@@ -220,4 +220,47 @@ get_header();
     </div>
 </div>
 
+<script>
+    window.addEventListener('load', function () {
+        var lazyVideos = document.querySelectorAll('video[data-src]');
+
+        lazyVideos.forEach(function (video) {
+            var source = video.getAttribute('data-src');
+
+            if (!source) {
+                return;
+            }
+
+            var startPlayback = function () {
+                var playPromise = video.play();
+
+                if (playPromise && typeof playPromise.catch === 'function') {
+                    playPromise.catch(function () {
+                        // Suppress autoplay promise rejections in browsers that block playback.
+                    });
+                }
+            };
+
+            video.muted = true;
+            video.setAttribute('muted', '');
+            video.setAttribute('autoplay', '');
+            video.setAttribute('playsinline', '');
+            video.src = source;
+            video.removeAttribute('data-src');
+
+            if (video.readyState >= 2) {
+                startPlayback();
+            } else {
+                video.addEventListener(
+                    'loadeddata',
+                    function handleLoadedData() {
+                        video.removeEventListener('loadeddata', handleLoadedData);
+                        startPlayback();
+                    }
+                );
+            }
+        });
+    });
+</script>
+
 <?php get_footer(); ?>
