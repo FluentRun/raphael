@@ -287,9 +287,17 @@ get_header();
     }
 
     @media (max-width: 767.98px) {
+        .hero-row {
+            text-align: center;
+        }
+        .hero-copy {
+            margin: 0 auto;
+            max-width: 520px;
+        }
         .hero-info-row {
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
+            text-align: center;
         }
         .hero-animation-shell {
             min-height: 200px;
@@ -302,10 +310,12 @@ get_header();
         }
         .hero-actions {
             flex-direction: column;
-            align-items: stretch;
+            align-items: center;
+            width: 100%;
         }
         .hero-actions .btn {
             width: 100%;
+            max-width: 320px;
         }
         .hero-media-card {
             padding: 0;
@@ -314,13 +324,23 @@ get_header();
             width: 48px;
             height: 48px;
         }
+        .hero-copy .badge,
+        .hero-copy .text-muted,
+        .hero-copy .d-flex {
+            justify-content: center;
+        }
+        .hero-copy .text-muted,
+        .hero-copy .hero-title,
+        .hero-copy p {
+            text-align: center;
+        }
     }
 </style>
 
 <section class="pt-5 pb-5 bg-light">
     <div class="container-lg">
-        <div class="p-4 p-md-5 bg-white border rounded-4 shadow-sm row g-4 align-items-center">
-            <div class="col-lg-6">
+        <div class="p-4 p-md-5 bg-white border rounded-4 shadow-sm row g-4 align-items-center hero-row">
+            <div class="col-lg-6 hero-copy">
                 <span class="d-inline-flex align-items-center small bg-light text-secondary px-3 py-1 rounded-pill mb-3">
                     webmakerr.com launches v5.9
                     <svg width="12" height="12" class="ms-2" fill="none" stroke="currentColor" stroke-width="1.5">
