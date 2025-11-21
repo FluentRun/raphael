@@ -199,6 +199,25 @@ get_header();
         stroke-linejoin: round;
         fill: none;
     }
+
+    .mobile-sticky-bar {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        background: #fff;
+        border-top: 1px solid #e5e7eb;
+        box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.08);
+        padding: 12px 16px;
+    }
+
+    @media (max-width: 767.98px) {
+        .mobile-sticky-bar {
+            display: block;
+        }
+    }
 </style>
 
 <section class="pt-5 pb-5 bg-light">
@@ -628,5 +647,18 @@ get_header();
         </div>
     </div>
 </section>
+
+<div class="mobile-sticky-bar d-md-none">
+    <div class="container-lg">
+        <div class="d-flex gap-2">
+            <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg w-100">
+                Order Now
+            </a>
+            <a href="/contact-us" class="btn btn-light border btn-lg w-100 text-dark">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</div>
 
 <?php get_footer(); ?>
