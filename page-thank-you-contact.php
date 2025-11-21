@@ -113,6 +113,16 @@ get_header();
         font-weight: 600;
         color: #0f172a;
     }
+
+    .hero-animation-shell {
+        min-height: 260px;
+        background: linear-gradient(135deg, #1877F2 50%, #000000 50%);
+        border-radius: 4px;
+        overflow: hidden;
+        padding: 24px;
+        display: flex;
+        align-items: center;
+    }
 </style>
 
 <div class="thankyou-ambient py-5 py-lg-6">
@@ -120,12 +130,19 @@ get_header();
         <div class="row g-4 align-items-stretch">
             <div class="col-lg-6">
                 <div class="thankyou-card h-100 d-flex flex-column justify-content-center">
-                    <div class="thankyou-pill mb-3">
-                        <svg fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                            <path d="M12 3 3 7v10l9 4 9-4V7l-9-4Z" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="m9 12.75 2 2 4-4.5" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                        <span><?php esc_html_e('Message received', 'rap'); ?></span>
+                    <div class="position-relative border rounded-3 p-3 shadow-sm hero-animation-shell mb-3">
+                        <div class="ratio ratio-16x9 w-100">
+                            <video
+                                class="w-100 h-100 rounded-3"
+                                data-src="https://cdn.webmakerr.com/website/booking.mp4"
+                                autoplay
+                                muted
+                                playsinline
+                                loop
+                                controls
+                                preload="none"
+                            ></video>
+                        </div>
                     </div>
                     <h1 class="fw-bold"><?php esc_html_e('We received your message', 'rap'); ?></h1>
                     <p class="mb-0">
