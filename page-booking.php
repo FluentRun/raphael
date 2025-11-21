@@ -307,6 +307,89 @@ get_header();
             text-align: center;
         }
     }
+
+    .trial-modal-backdrop {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(4px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        z-index: 2000;
+        opacity: 0;
+        transition: opacity 200ms ease;
+    }
+
+    .trial-modal-backdrop.is-visible {
+        display: flex;
+        opacity: 1;
+    }
+
+    .trial-modal {
+        width: 100%;
+        max-width: 520px;
+        background: #ffffff;
+        border-radius: 12px;
+        border: 1px solid #e5e7eb;
+        box-shadow: 0 24px 60px rgba(15, 23, 42, 0.16);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .trial-modal::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 20% 20%, rgba(24, 119, 242, 0.08), transparent 40%),
+            radial-gradient(circle at 80% 0%, rgba(0, 0, 0, 0.05), transparent 35%);
+        pointer-events: none;
+    }
+
+    .trial-modal__header {
+        padding: 20px 24px 0;
+    }
+
+    .trial-modal__body {
+        padding: 16px 24px 24px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .trial-modal__close {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        border: none;
+        background: rgba(0, 0, 0, 0.04);
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #0f172a;
+        transition: background-color 150ms ease, transform 150ms ease;
+    }
+
+    .trial-modal__close:hover {
+        background: rgba(0, 0, 0, 0.08);
+        transform: translateY(-1px);
+    }
+
+    .trial-modal__subtitle {
+        color: #475467;
+    }
+
+    .trial-modal__status {
+        display: none;
+        margin-top: 12px;
+    }
+
+    .trial-modal__status.is-visible {
+        display: block;
+    }
 </style>
 
 <section class="pt-5 pb-5 bg-light">
@@ -334,8 +417,8 @@ get_header();
                         Order Plugin Now
                     </a>
 
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
-                        <span class="text-dark">Start for free</span>
+                    <a href="#get-free-trial" class="btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" data-trial-open style="max-width:260px;">
+                        <span class="text-dark">Get Free Trail</span>
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
                             <path d="M4 2l6 5-6 5" />
                         </svg>
@@ -386,6 +469,48 @@ get_header();
         </div>
     </div>
 </section>
+
+<div class="trial-modal-backdrop" id="freeTrialModal" aria-hidden="true" role="dialog">
+    <div class="trial-modal" role="document">
+        <button type="button" class="trial-modal__close" aria-label="Close" data-trial-close>
+            <svg width="18" height="18" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4l12 12m0-12L4 16" />
+            </svg>
+        </button>
+
+        <div class="trial-modal__header">
+            <p class="small text-uppercase text-muted fw-semibold mb-1">Free trial access</p>
+            <h3 class="fw-semibold text-dark mb-1">Book your FluentBooking trial</h3>
+            <p class="trial-modal__subtitle small mb-0">Tell us where to send your onboarding link.</p>
+        </div>
+
+        <div class="trial-modal__body">
+            <form id="freeTrialForm" class="needs-validation" novalidate>
+                <div class="mb-3">
+                    <label for="trialName" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="trialName" name="trialName" placeholder="Jane Doe" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="trialEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="trialEmail" name="trialEmail" placeholder="you@company.com" required>
+                </div>
+
+                <button type="submit" class="btn btn-dark btn-lg w-100 d-flex justify-content-center align-items-center gap-2" data-trial-submit>
+                    <span>Submit</span>
+                    <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" data-trial-spinner></span>
+                </button>
+
+                <div class="alert alert-success trial-modal__status mt-3" role="status" data-trial-success>
+                    Thanks! Your request has been received. Check your inbox for next steps.
+                </div>
+                <div class="alert alert-danger trial-modal__status mt-3" role="alert" data-trial-error>
+                    Something went wrong. Please try again in a moment.
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -709,7 +834,7 @@ get_header();
 
                 <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-md-start w-100" style="max-width: 420px;">
                     <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Order Plugin Now</a>
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">Start for free</a>
+                    <a href="#get-free-trial" class="btn btn-light border btn-lg" data-trial-open>Get Free Trail</a>
                 </div>
             </div>
 
@@ -764,12 +889,133 @@ get_header();
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg w-100">
                 Order Plugin Now
             </a>
-            <a href="/contact-us" class="btn btn-light border btn-lg w-100 text-dark">
-                Start for free
+            <a href="#get-free-trial" class="btn btn-light border btn-lg w-100 text-dark" data-trial-open>
+                Get Free Trail
             </a>
         </div>
     </div>
 </div>
+
+<script>
+    (function () {
+        var modalBackdrop = document.getElementById('freeTrialModal');
+        var form = document.getElementById('freeTrialForm');
+        var nameInput = document.getElementById('trialName');
+        var emailInput = document.getElementById('trialEmail');
+        var successAlert = modalBackdrop ? modalBackdrop.querySelector('[data-trial-success]') : null;
+        var errorAlert = modalBackdrop ? modalBackdrop.querySelector('[data-trial-error]') : null;
+        var spinner = modalBackdrop ? modalBackdrop.querySelector('[data-trial-spinner]') : null;
+        var submitBtn = modalBackdrop ? modalBackdrop.querySelector('[data-trial-submit]') : null;
+        var webhookUrl = 'https://webmakerr.com/?fluentcrm=1&route=contact&hash=fb919fc9-b574-4847-8d03-014249a2767e';
+
+        if (!modalBackdrop || !form || !nameInput || !emailInput) {
+            return;
+        }
+
+        var toggleModal = function (show) {
+            modalBackdrop.classList.toggle('is-visible', show);
+            modalBackdrop.setAttribute('aria-hidden', show ? 'false' : 'true');
+            document.body.classList.toggle('overflow-hidden', show);
+
+            if (show) {
+                successAlert && successAlert.classList.remove('is-visible');
+                errorAlert && errorAlert.classList.remove('is-visible');
+                nameInput.focus();
+            }
+        };
+
+        var closeModal = function () {
+            toggleModal(false);
+        };
+
+        var openButtons = document.querySelectorAll('[data-trial-open]');
+        openButtons.forEach(function (btn) {
+            btn.addEventListener('click', function (event) {
+                event.preventDefault();
+                toggleModal(true);
+            });
+        });
+
+        var closeButtons = modalBackdrop.querySelectorAll('[data-trial-close]');
+        closeButtons.forEach(function (btn) {
+            btn.addEventListener('click', closeModal);
+        });
+
+        modalBackdrop.addEventListener('click', function (event) {
+            if (event.target === modalBackdrop) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keyup', function (event) {
+            if (event.key === 'Escape' && modalBackdrop.classList.contains('is-visible')) {
+                closeModal();
+            }
+        });
+
+        var setLoading = function (isLoading) {
+            if (!submitBtn || !spinner) {
+                return;
+            }
+
+            submitBtn.disabled = isLoading;
+            spinner.classList.toggle('d-none', !isLoading);
+        };
+
+        var showStatus = function (type) {
+            if (successAlert) {
+                successAlert.classList.toggle('is-visible', type === 'success');
+            }
+            if (errorAlert) {
+                errorAlert.classList.toggle('is-visible', type === 'error');
+            }
+        };
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var name = nameInput.value.trim();
+            var email = emailInput.value.trim();
+
+            showStatus('');
+            if (!name || !email) {
+                showStatus('error');
+                return;
+            }
+
+            setLoading(true);
+
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: email,
+                    first_name: name
+                })
+            })
+                .then(function (response) {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json().catch(function () {
+                        return {};
+                    });
+                })
+                .then(function () {
+                    form.reset();
+                    showStatus('success');
+                })
+                .catch(function () {
+                    showStatus('error');
+                })
+                .finally(function () {
+                    setLoading(false);
+                });
+        });
+    })();
+</script>
 
 <script>
     window.addEventListener('load', function () {
