@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Facebook Ads Course Landing
+ * Template Name: SEO Plugin Landing
  * Template Post Type: page
  */
 
@@ -249,33 +249,33 @@ get_header();
         <div class="p-4 p-md-5 bg-white border rounded-4 shadow-sm row g-4 align-items-center">
             <div class="col-lg-6">
                 <span class="d-inline-flex align-items-center small bg-light text-secondary px-3 py-1 rounded-pill mb-3">
-                    New cohort • Facebook Ads Mastery
+                    New release • Lightning-fast SEO Plugin
                     <svg width="12" height="12" class="ms-2" fill="none" stroke="currentColor" stroke-width="1.5">
                         <path d="M4 2l4 4-4 4" />
                     </svg>
                 </span>
 
                 <h1 class="fw-semibold lh-sm text-dark hero-title">
-                    Turn Facebook Ads into predictable revenue.<br>
+                    Rank faster with the SEO plugin that sets itself up.<br>
                 </h1>
 
                 <p class="mt-3 text-secondary">
-                    Learn the exact playbooks, ads, and tracking stack that take cold traffic to paying customers—without guessing what works or wasting budget.
+                    Install in minutes, automate every meta tag, and watch pages climb without hiring an expert or wrestling with settings.
                 </p>
 
                 <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-4 btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
                     <img src="<?php echo esc_url( $theme_dir . '/images/home/user3.png' ); ?>" width="18" alt="Google icon">
-                    Enroll with Google
+                    Get the SEO plugin
                 </a>
 
                 <a href="<?php echo esc_url( $checkout_url ); ?>" class="mt-2 btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
-                    <span class="text-dark">Enroll with email</span>
+                    <span class="text-dark">Buy with email</span>
                     <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
                         <path d="M4 2l6 5-6 5" />
                     </svg>
                 </a>
 
-                <p class="small text-muted mt-2">Seats are limited—lock yours in now</p>
+                <p class="small text-muted mt-2">Instant download—optimize your site today</p>
 
                 <div class="d-flex gap-4 mt-4">
                     <img src="<?php echo esc_url( $theme_dir . '/images/trustf/sslupf.svg' ); ?>" height="20" alt="Trustpilot">
@@ -287,16 +287,16 @@ get_header();
                     <div class="p-4 position-relative" style="z-index:2; min-height:350px;">
                         <div class="d-flex justify-content-between align-items-start mb-3 hero-info-row">
                             <div>
-                                <p class="fw-semibold text-dark mb-1">Facebook Ads Strategy Call</p>
-                                <p class="small text-muted mb-0">Walk through the funnel, reporting, and creative reviews you will implement inside the cohort.</p>
+                                <p class="fw-semibold text-dark mb-1">SEO Quickstart Session</p>
+                                <p class="small text-muted mb-0">See how fast the plugin audits pages, fixes metadata, and automates the essentials for better rankings.</p>
                             </div>
-                            <span class="badge bg-dark small px-3 py-2 hero-pill">Live cohort</span>
+                            <span class="badge bg-dark small px-3 py-2 hero-pill">Set &amp; forget</span>
                         </div>
 
                         <div class="d-flex flex-wrap gap-2 small text-muted mb-3">
-                            <span class="border rounded-pill px-3 py-1">90-min blueprint</span>
-                            <span class="border rounded-pill px-3 py-1">Live online</span>
-                            <span class="border rounded-pill px-3 py-1">Recorded &amp; reusable</span>
+                            <span class="border rounded-pill px-3 py-1">5-min setup</span>
+                            <span class="border rounded-pill px-3 py-1">Auto-optimization</span>
+                            <span class="border rounded-pill px-3 py-1">Works on any theme</span>
                         </div>
 
                         <div class="position-relative border rounded-3 p-3 shadow-sm hero-animation-shell">
@@ -315,19 +315,19 @@ get_header();
     <div class="container-lg">
         <div class="text-center mx-auto" style="max-width: 700px;">
             <span class="d-inline-flex align-items-center bg-white border px-3 py-1 rounded-pill text-secondary small shadow-sm mb-3">
-                Inside the course
+                Inside the plugin
             </span>
 
             <h2 class="fw-semibold display-6 text-dark lh-sm">
-                Everything you need to launch profitable Facebook ads fast
+                Everything you need to outrank competitors fast
             </h2>
 
             <p class="mt-3 text-secondary">
-                Follow a proven curriculum with scripts, swipe files, and tracking templates so every campaign is set up to capture leads, retarget, and close sales.
+                Lightweight, automated SEO with built-in best practices so pages load faster, index quicker, and earn more clicks.
             </p>
 
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg mt-4 shadow-sm">
-                Enroll now →
+                Get the plugin →
             </a>
         </div>
 
@@ -338,10 +338,10 @@ get_header();
                         <span class="fw-bold text-secondary small">01</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Ad campaigns built to convert</h5>
+                    <h5 class="fw-semibold text-dark">On-page SEO done for you</h5>
 
                     <p class="text-muted small mt-2">
-                        Deploy winning creatives, copy, and audiences with our swipe files so every ad drives qualified traffic from day one.
+                        Auto-generate meta titles, descriptions, and schema so every publish is optimized for clicks and crawlability.
                     </p>
 
                     <div class="mt-auto d-flex justify-content-center pt-3">
@@ -370,10 +370,10 @@ get_header();
                         <span class="fw-bold text-secondary small">02</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Offer funnels that scale</h5>
+                    <h5 class="fw-semibold text-dark">Traffic-ready site structure</h5>
 
                     <p class="text-muted small mt-2">
-                        Plug in landing pages, lead magnets, and upsell flows that are already pressure-tested to turn clicks into customers.
+                        Generate sitemaps, breadcrumbs, and clean URLs automatically so search engines understand and rank every page.
                     </p>
 
                     <div class="mt-auto pt-3">
@@ -409,10 +409,10 @@ get_header();
                         <span class="fw-bold text-secondary small">03</span>
                     </span>
 
-                    <h5 class="fw-semibold text-dark">Tracking and optimization dialed in</h5>
+                    <h5 class="fw-semibold text-dark">Speed and insights built-in</h5>
 
                     <p class="text-muted small mt-2">
-                        Pixel setups, UTM tracking, dashboards, and weekly optimization checklists so you know exactly what to scale or kill.
+                        Performance tweaks, automatic image alt text, and clear reports so you can see wins and keep improving rankings.
                     </p>
 
                     <div class="mt-auto d-flex justify-content-center pt-3">
@@ -458,7 +458,7 @@ get_header();
 <section class="py-5 bg-light">
     <div class="container-lg">
         <h2 class="text-center fw-semibold lh-sm text-dark mb-5" style="font-size: 2.5rem;">
-            ...plus every shortcut to scale faster
+            ...plus every shortcut to rank and load faster
         </h2>
 
         <div class="row g-4 justify-content-center">
@@ -475,14 +475,14 @@ get_header();
             ];
 
             $labels = [
-                'High-converting ad templates',
-                'Live weekly coaching',
-                'Proven hooks and headlines',
-                'Budget and bid calculators',
-                'Retargeting scripts',
-                'Plug-and-play landing pages',
-                'Data-backed testing plan',
-                'Checklists for every launch'
+                'Automatic meta titles & descriptions',
+                '1-click XML sitemaps',
+                'Schema markup that boosts clicks',
+                'Image optimization & alt text',
+                'Local SEO ready',
+                'Clean breadcrumbs & permalinks',
+                'Performance-friendly code',
+                'Step-by-step setup checklist'
             ];
 
             foreach ($labels as $index => $label):
@@ -503,21 +503,21 @@ get_header();
 <section class="py-5 bg-light">
     <div class="container-lg text-center">
         <span class="d-inline-flex align-items-center bg-white border px-3 py-1 rounded-pill text-secondary small shadow-sm mb-3">
-            Student results
+            Customer results
         </span>
 
         <h2 class="fw-semibold lh-sm text-dark" style="font-size: 2.5rem;">
-            Marketers turning ads into revenue
+            Sites loading faster and ranking higher
         </h2>
 
         <p class="mt-3 text-secondary small mx-auto" style="max-width: 620px;">
-            See how the Facebook Ads course helped founders and growth teams launch profitable campaigns without guesswork.
+            See how teams shipped the plugin, automated SEO basics, and won more organic traffic without extra dev work.
         </p>
 
         <div class="d-none d-md-flex justify-content-center align-items-center gap-4 mt-5">
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “The launch templates let us ship three winning campaigns in week one. Our cost per lead dropped 42% without hiring an agency.”
+                    “Auto meta tags and schema went live in 10 minutes. Organic clicks jumped 38% and we retired three bloated plugins.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -534,7 +534,7 @@ get_header();
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 420px; height: 230px;">
                 <p class="text-dark fw-semibold mb-4">
-                    “Following the weekly optimization checklist took us to 3.1x ROAS in 30 days. The offer tweaks alone paid for the course in a weekend.”
+                    “PageSpeed scores spiked and we hit page one for our service pages. Setup was guided, automatic, and didn’t require our developer once.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -551,7 +551,7 @@ get_header();
 
             <div class="bg-white border rounded-4 shadow-sm p-4" style="width: 350px; height: 210px; opacity: 0.35; transform: scale(0.94);">
                 <p class="text-dark small fst-italic mb-4">
-                    “The retargeting scripts and email automations filled the gaps in our funnel. Every ad click now gets a personalized follow-up sequence.”
+                    “Local SEO tools and rich snippets boosted calls from nearby customers. Everything runs quietly in the background.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -570,7 +570,7 @@ get_header();
         <div class="d-md-none mx-auto mt-4" style="max-width: 380px;">
             <div class="bg-white border rounded-4 shadow-sm p-4">
                 <p class="text-dark fw-semibold mb-4">
-                    “Following the weekly optimization checklist took us to 3.1x ROAS in 30 days. The offer tweaks alone paid for the course in a weekend.”
+                    “PageSpeed scores spiked and we hit page one for our service pages. Setup was guided, automatic, and didn’t require our developer once.”
                 </p>
 
                 <div class="d-flex align-items-center">
@@ -593,20 +593,20 @@ get_header();
         <div class="bg-white border rounded-4 shadow-sm p-4 p-md-5 row g-4 align-items-center">
             <div class="col-md-5 d-flex flex-column">
                 <span class="d-inline-flex align-items-center bg-white border px-3 py-1 rounded-pill text-secondary small shadow-sm mb-3">
-                    Curriculum
+                    How it works
                 </span>
 
                 <h2 class="fw-semibold lh-sm text-dark mb-3" style="font-size: 2.25rem;">
-                    Learn the system.<br>Apply it the same day.
+                    Set it up once.<br>Let it optimize every day.
                 </h2>
 
                 <p class="text-muted small mb-4" style="max-width: 420px;">
-                    Every module includes walkthroughs, worksheets, and live examples so you can launch, measure, and scale campaigns without pausing to Google what to do next.
+                    Guided defaults, quick checklists, and automation keep your site fast, structured, and search-ready without complicated dashboards.
                 </p>
 
                 <div class="d-flex flex-wrap gap-2">
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Enroll now →</a>
-                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">View syllabus →</a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Get the plugin →</a>
+                    <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-light border btn-lg">See all features →</a>
                 </div>
             </div>
 
@@ -654,13 +654,13 @@ get_header();
 
             <div class="position-relative" style="z-index:2;">
                 <h2 class="fw-semibold lh-sm text-dark mx-auto" style="font-size: 2.25rem; max-width: 700px;">
-                    Claim your seat in Facebook Ads Mastery
-                    <br class="d-none d-sm-block">Bonuses disappear when the cohort fills.
+                    Switch to the SEO plugin built for speed and rankings
+                    <br class="d-none d-sm-block">Start in minutes with automation built in.
                 </h2>
 
                 <div class="mt-4">
                     <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg shadow-sm">
-                        Join the cohort →
+                        Download the plugin →
                     </a>
                 </div>
             </div>
@@ -672,7 +672,7 @@ get_header();
     <div class="container-lg">
         <div class="d-flex gap-2">
             <a href="<?php echo esc_url( $checkout_url ); ?>" class="btn btn-dark btn-lg w-100">
-                Order Now
+                Get the plugin
             </a>
             <a href="/contact-us" class="btn btn-light border btn-lg w-100 text-dark">
                 Contact Us
