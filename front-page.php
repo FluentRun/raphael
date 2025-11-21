@@ -14,6 +14,7 @@ wp_enqueue_script(
 );
 
 $theme_dir = get_template_directory_uri();
+$booking_url = 'https://webmakerr.com/?booking=calendar&host=webmakerr&event=30min';
 
 get_header();
 ?>
@@ -198,6 +199,20 @@ get_header();
         justify-content: center;
         pointer-events: none;
     }
+
+    .mobile-sticky-bar {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1030;
+        background: #fff;
+        border-top: 1px solid #e5e7eb;
+        box-shadow: 0 -4px 16px rgba(15, 23, 42, 0.08);
+        padding: 12px 16px;
+    }
+
     .hero-video-overlay .hero-play-badge {
         background: rgba(255, 255, 255, 0.9);
         color: #0f172a;
@@ -287,6 +302,9 @@ get_header();
     }
 
     @media (max-width: 767.98px) {
+        .mobile-sticky-bar {
+            display: block;
+        }
         .hero-row {
             text-align: center;
         }
@@ -357,17 +375,17 @@ get_header();
                 </p>
 
                 <div class="d-flex flex-wrap hero-actions mt-4">
-                    <button class="btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
+                    <a href="<?php echo esc_url( $booking_url ); ?>" class="btn btn-dark btn-lg d-flex align-items-center gap-2 w-100" style="max-width:260px;">
                         <img src="<?php echo esc_url( $theme_dir . '/images/home/user3.png' ); ?>" width="18" alt="Google icon">
                         Sign up with Google
-                    </button>
+                    </a>
 
-                    <button class="btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
+                    <a href="<?php echo esc_url( $booking_url ); ?>" class="btn btn-light border btn-lg d-flex align-items-center justify-content-between w-100" style="max-width:260px;">
                         <span class="text-dark">Sign up with email</span>
                         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.4">
                             <path d="M4 2l6 5-6 5" />
                         </svg>
-                    </button>
+                    </a>
                 </div>
 
                 <p class="small text-muted mt-2">No credit card required</p>
@@ -462,9 +480,9 @@ get_header();
                 Your website becomes a streamlined sales engine: clear message, clean user flow, and functionality built around your business — not templates.
             </p>
 
-            <button class="btn btn-dark btn-lg mt-4 shadow-sm">
+            <a href="<?php echo esc_url( $booking_url ); ?>" class="btn btn-dark btn-lg mt-4 shadow-sm">
                 Get started →
-            </button>
+            </a>
         </div>
 
         <div class="row g-4 mt-5">
@@ -741,8 +759,8 @@ get_header();
                 </p>
 
                 <div class="d-flex flex-wrap gap-2">
-                    <button class="btn btn-dark btn-lg shadow-sm">Get started →</button>
-                    <button class="btn btn-light border btn-lg">Explore apps →</button>
+                    <a href="<?php echo esc_url( $booking_url ); ?>" class="btn btn-dark btn-lg shadow-sm">Get started →</a>
+                    <a href="<?php echo esc_url( $booking_url ); ?>" class="btn btn-light border btn-lg">Explore apps →</a>
                 </div>
             </div>
 
@@ -795,13 +813,26 @@ get_header();
                 </h2>
 
                 <div class="mt-4">
-                    <button class="btn btn-dark btn-lg shadow-sm">
+                    <a href="<?php echo esc_url( $booking_url ); ?>" class="btn btn-dark btn-lg shadow-sm">
                         Get started →
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<div class="mobile-sticky-bar d-md-none">
+    <div class="container-lg">
+        <div class="d-flex gap-2">
+            <a href="<?php echo esc_url( $booking_url ); ?>" class="btn btn-dark btn-lg w-100">
+                Order Now
+            </a>
+            <a href="/contact-us" class="btn btn-light border btn-lg w-100 text-dark">
+                Contact Us
+            </a>
+        </div>
+    </div>
+</div>
 
 <?php get_footer(); ?>
