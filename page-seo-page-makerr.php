@@ -169,6 +169,15 @@ get_header();
         font-weight: 600;
         color: #0f172a;
     }
+    .hero-title {
+        font-size: clamp(2rem, 1.5rem + 2vw, 3.4rem);
+    }
+    .hero-info-row {
+        gap: 1rem;
+    }
+    .hero-pill {
+        white-space: nowrap;
+    }
     .feature-card {
         width: 180px;
         height: 180px;
@@ -217,6 +226,21 @@ get_header();
         .mobile-sticky-bar {
             display: block;
         }
+        .hero-info-row {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .hero-animation-shell {
+            padding: 16px;
+            min-height: 220px;
+        }
+        .hero-feature-card {
+            padding: 14px;
+        }
+        .hero-feature-card svg {
+            width: 52px;
+            height: 52px;
+        }
     }
 </style>
 
@@ -231,7 +255,7 @@ get_header();
                     </svg>
                 </span>
 
-                <h1 class="fw-semibold display-5 lh-sm text-dark">
+                <h1 class="fw-semibold lh-sm text-dark hero-title">
                     Publish thousands of SEO-optimized pages automatically.<br>
                 </h1>
 
@@ -261,16 +285,12 @@ get_header();
             <div class="col-lg-6">
                 <div class="position-relative bg-white border rounded-4 shadow-sm overflow-hidden booking-ambient">
                     <div class="p-4 position-relative" style="z-index:2; min-height:350px;">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div class="d-flex gap-3">
-                                <img src="<?php echo esc_url( $theme_dir . '/images/home/user2.png' ); ?>" class="rounded-circle" width="48" height="48" alt="Profile">
-                                <div>
-                                    <p class="fw-medium mb-1 small text-dark">Isabella Valce</p>
-                                    <p class="fw-semibold text-dark mb-1">SEO Pages Automation Demo</p>
-                                    <p class="small text-muted">Watch us spin up location, service, and AI content pages that index fast and convert visitors on autopilot.</p>
-                                </div>
+                        <div class="d-flex justify-content-between align-items-start mb-3 hero-info-row">
+                            <div>
+                                <p class="fw-semibold text-dark mb-1">SEO Pages Automation Demo</p>
+                                <p class="small text-muted mb-0">See how the builder spins up location, service, and AI-assisted pages that publish directly to your site.</p>
                             </div>
-                            <span class="badge bg-dark small px-3 py-2">Live demo</span>
+                            <span class="badge bg-dark small px-3 py-2 hero-pill">Live demo</span>
                         </div>
 
                         <div class="d-flex flex-wrap gap-2 small text-muted mb-3">

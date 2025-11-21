@@ -163,6 +163,15 @@ get_header();
         font-weight: 600;
         color: #0f172a;
     }
+    .hero-title {
+        font-size: clamp(2rem, 1.5rem + 2vw, 3.4rem);
+    }
+    .hero-info-row {
+        gap: 1rem;
+    }
+    .hero-pill {
+        white-space: nowrap;
+    }
     .feature-card {
         width: 180px;
         height: 180px;
@@ -193,6 +202,30 @@ get_header();
         stroke-linejoin: round;
         fill: none;
     }
+
+    @media (max-width: 991.98px) {
+        .hero-animation-shell {
+            padding: 16px;
+            min-height: 220px;
+        }
+        .hero-feature-card svg {
+            width: 52px;
+            height: 52px;
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .hero-info-row {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .hero-feature-card {
+            padding: 14px;
+        }
+        .hero-feature-card span {
+            margin-top: 8px;
+        }
+    }
 </style>
 
 <section class="pt-5 pb-5 bg-light">
@@ -206,7 +239,7 @@ get_header();
                     </svg>
                 </span>
 
-                <h1 class="fw-semibold display-5 lh-sm text-dark">
+                <h1 class="fw-semibold lh-sm text-dark hero-title">
                     Your Website Must Sell. Not Just Look Nice.<br>
                 </h1>
 
@@ -236,16 +269,12 @@ get_header();
             <div class="col-lg-6">
                 <div class="position-relative bg-white border rounded-4 shadow-sm overflow-hidden booking-ambient">
                     <div class="p-4 position-relative" style="z-index:2; min-height:350px;">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <div class="d-flex gap-3">
-                                <img src="<?php echo esc_url( $theme_dir . '/images/home/user2.png' ); ?>" class="rounded-circle" width="48" height="48" alt="Profile">
-                                <div>
-                                    <p class="fw-medium mb-1 small text-dark">Isabella Valce</p>
-                                    <p class="fw-semibold text-dark mb-1">Creative Photoshoot</p>
-                                    <p class="small text-muted">A modern booking experience that moves smoothly from availability to confirmation.</p>
-                                </div>
+                        <div class="d-flex justify-content-between align-items-start mb-3 hero-info-row">
+                            <div>
+                                <p class="fw-semibold text-dark mb-1">Conversion-ready workspace</p>
+                                <p class="small text-muted mb-0">Booking, checkout, tracking, and customization—previewed together for a real sales flow.</p>
                             </div>
-                            <span class="badge bg-dark small px-3 py-2">Live preview</span>
+                            <span class="badge bg-dark small px-3 py-2 hero-pill">Live preview</span>
                         </div>
 
                         <div class="d-flex flex-wrap gap-2 small text-muted mb-3">
