@@ -1220,15 +1220,11 @@ get_header();
     });
 </script>
 
-<!-- Facebook Ads Compliance Disclaimer -->
-<section class="wmk-disclaimer" style="padding:40px 0; font-size:14px; color:#666; line-height:1.6;">
+<section class="wmk-disclaimer" style="padding:20px 0; font-size:11px; color:#777; line-height:1.5;">
     <div class="container">
-        <p><strong>Important Disclaimer:</strong> Results from advertising campaigns vary and are never guaranteed. All strategies, templates, scripts, and tools provided are for educational purposes only and do not promise specific performance outcomes. Advertising results depend on factors such as industry, offer, competition, creative quality, and implementation.</p>
-
-        <p>This page and its content are not endorsed by, directly affiliated with, or sponsored by Meta, Facebook, Instagram, or any associated platforms. Advertisers are fully responsible for complying with Meta’s Advertising Policies and all local regulations. Testimonials or examples shown illustrate individual experiences and are not typical or guaranteed results.</p>
-
-        <p>By using any material from this page or launching campaigns, you accept full responsibility for your advertising decisions, account compliance, spend, and results.</p>
+        <p>This training is for educational purposes only and does not guarantee results. This page is not endorsed by or affiliated with Meta Platforms, Inc. Advertisers are responsible for following all Meta Advertising Policies.</p>
     </div>
 </section>
+
 
 <?php get_footer(); ?>
