@@ -103,12 +103,6 @@
         <button type="button" class="btn-close codex-offcanvas-close" data-bs-dismiss="offcanvas" aria-label="<?php esc_attr_e('Close menu', 'rap'); ?>"></button>
     </div>
     <div class="offcanvas-body codex-offcanvas-body d-flex flex-column gap-4">
-        <section class="codex-offcanvas-section codex-offcanvas-search">
-            <p class="codex-offcanvas-label text-uppercase fw-semibold mb-2"><?php esc_html_e('Search store', 'rap'); ?></p>
-            <div class="codex-offcanvas-search-form">
-                <?php do_action('adstm_search'); ?>
-            </div>
-        </section>
         <nav class="codex-offcanvas-nav flex-grow-1" aria-label="<?php esc_attr_e('Mobile navigation', 'rap'); ?>">
             <p class="codex-offcanvas-label text-uppercase fw-semibold mb-2"><?php esc_html_e('Browse', 'rap'); ?></p>
             <?php
@@ -123,6 +117,7 @@
             ?>
         </nav>
         <div class="codex-offcanvas-meta d-flex flex-column gap-3">
+            <a class="btn btn-primary w-100 codex-start-btn" href="<?php echo esc_url($cta_link ?: $account_url); ?>"<?php echo $cta_target; ?>><?php esc_html_e('Start For Free', 'rap'); ?></a>
             <div class="codex-offcanvas-card">
                 <div class="codex-offcanvas-card-label text-uppercase fw-semibold"><?php esc_html_e('Account', 'rap'); ?></div>
                 <div class="codex-offcanvas-card-content codex-offcanvas-account">
@@ -141,7 +136,7 @@
 
 <header class="codex-header position-sticky top-0 w-100 bg-white">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-xl d-flex align-items-center gap-3">
+        <div class="container-xl d-flex align-items-center gap-4 flex-nowrap">
             <div class="codex-brand flex-shrink-0">
                 <?php do_action('adstm_logo_header'); ?>
             </div>
@@ -157,16 +152,14 @@
                 }
                 ?>
             </div>
-            <div class="codex-header-icons d-none d-lg-flex align-items-center gap-2 ms-auto">
+            <div class="d-flex align-items-center gap-2 ms-auto flex-shrink-0">
+                <a class="btn btn-primary codex-start-btn d-lg-none" href="<?php echo esc_url($cta_link ?: $account_url); ?>"<?php echo $cta_target; ?>><?php esc_html_e('Start For Free', 'rap'); ?></a>
+                <div class="codex-header-icons d-none d-lg-flex align-items-center gap-3">
                 <?php if(cz('tp_currency_switcher')){ ?>
                     <div class="codex-currency-switcher">
                         <?php do_action('adstm_dropdown_currency'); ?>
                     </div>
                 <?php } ?>
-                <button class="btn btn-outline-secondary btn-icon" type="button" data-bs-toggle="collapse" data-bs-target="#codexHeaderSearch" aria-expanded="false" aria-controls="codexHeaderSearch">
-                    <span class="visually-hidden"><?php _e('Search', 'rap'); ?></span>
-                    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M15.5 14h-.79l-.28-.27A6 6 0 1 0 14 15.5l.27.28v.79L21 22.5 22.5 21zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg>
-                </button>
                 <a class="btn btn-outline-secondary btn-icon" href="<?php echo esc_url($account_url); ?>">
                     <span class="visually-hidden"><?php _e('Account', 'rap'); ?></span>
                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5zm0 2c-4 0-7 2-7 4.44V21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.56C19 16 16 14 12 14z"/></svg>
@@ -174,11 +167,10 @@
                 <div class="codex-cart-link">
                     <?php do_action('adstm_cart_quantity_link'); ?>
                 </div>
-                <?php if($cta_text && $cta_link){ ?>
-                    <a class="btn btn-primary ms-2" href="<?php echo esc_url($cta_link); ?>"<?php echo $cta_target; ?>><?php echo esc_html($cta_text); ?></a>
-                <?php } ?>
+                <a class="btn btn-primary codex-start-btn d-none d-lg-inline-flex" href="<?php echo esc_url($cta_link ?: $account_url); ?>"<?php echo $cta_target; ?>><?php esc_html_e('Start For Free', 'rap'); ?></a>
+                </div>
             </div>
-            <button class="navbar-toggler ms-auto d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#codexOffcanvas" aria-controls="codexOffcanvas" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rap' ); ?>">
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#codexOffcanvas" aria-controls="codexOffcanvas" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rap' ); ?>">
                 <span class="navbar-toggler-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" focusable="false" role="presentation">
                         <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -187,13 +179,6 @@
             </button>
         </div>
     </nav>
-    <div class="collapse codex-header-search" id="codexHeaderSearch">
-        <div class="container-xl py-3">
-            <div class="codex-search-form">
-                <?php do_action('adstm_search'); ?>
-            </div>
-        </div>
-    </div>
 </header>
 
 <?php get_template_part( 'template/str_data_common' ); ?>

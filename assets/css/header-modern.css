@@ -28,8 +28,12 @@
 }
 
 .codex-header .navbar {
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0.85rem;
+    padding-bottom: 0.85rem;
+}
+
+.codex-header .container-xl {
+    gap: 1.5rem;
 }
 
 .codex-brand .logo,
@@ -104,7 +108,7 @@
 }
 
 .codex-header-icons {
-    gap: 0.75rem;
+    gap: 1rem;
 }
 
 .codex-header-icons .btn-icon,
@@ -148,6 +152,48 @@
 .codex-header .btn.btn-primary:hover {
     transform: translateY(-1px);
     box-shadow: 0 1rem 1.5rem rgba(79, 70, 229, 0.3);
+}
+
+.codex-start-btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding-inline: 1.35rem;
+    gap: 0.35rem;
+    white-space: nowrap;
+}
+
+.codex-offcanvas-meta .codex-start-btn {
+    width: 100%;
+}
+
+.codex-offcanvas-body {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.codex-offcanvas-nav {
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--codex-border-color);
+}
+
+.codex-offcanvas-meta {
+    padding-top: 0.5rem;
+}
+
+@media (max-width: 991.98px) {
+    .codex-main-nav {
+        display: none;
+    }
+
+    .codex-header .container-xl {
+        gap: 0.75rem;
+    }
+
+    .codex-start-btn.d-lg-none {
+        padding-inline: 1rem;
+    }
 }
 
 .codex-currency-switcher select,
