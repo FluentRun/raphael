@@ -117,7 +117,7 @@
             ?>
         </nav>
         <div class="codex-offcanvas-meta d-flex flex-column gap-3">
-            <a class="btn btn-primary w-100 codex-start-btn" href="<?php echo esc_url($cta_link ?: $account_url); ?>"<?php echo $cta_target; ?>><?php esc_html_e('Start For Free', 'rap'); ?></a>
+            <a class="btn codex-start-btn codex-header-cta w-100" href="<?php echo esc_url( home_url('/contact-us') ); ?>"><?php esc_html_e('Start For Free', 'rap'); ?></a>
             <div class="codex-offcanvas-card">
                 <div class="codex-offcanvas-card-label text-uppercase fw-semibold"><?php esc_html_e('Account', 'rap'); ?></div>
                 <div class="codex-offcanvas-card-content codex-offcanvas-account">
@@ -136,11 +136,18 @@
 
 <header class="codex-header position-sticky top-0 w-100 bg-white">
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-xl d-flex align-items-center gap-4 flex-nowrap">
-            <div class="codex-brand flex-shrink-0">
+        <div class="container-xl codex-header-container d-flex align-items-center gap-4 flex-nowrap">
+            <button class="navbar-toggler d-lg-none order-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#codexOffcanvas" aria-controls="codexOffcanvas" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rap' ); ?>">
+                <span class="navbar-toggler-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" focusable="false" role="presentation">
+                        <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                </span>
+            </button>
+            <div class="codex-brand flex-shrink-0 order-2 order-lg-1">
                 <?php do_action('adstm_logo_header'); ?>
             </div>
-            <div class="codex-main-nav d-none d-lg-flex flex-grow-1 justify-content-center">
+            <div class="codex-main-nav d-none d-lg-flex flex-grow-1 justify-content-center order-lg-2">
                 <?php
                 if($desktop_menu){
                     echo $desktop_menu;
@@ -152,8 +159,8 @@
                 }
                 ?>
             </div>
-            <div class="d-flex align-items-center gap-2 ms-auto flex-shrink-0">
-                <a class="btn btn-primary codex-start-btn d-lg-none" href="<?php echo esc_url($cta_link ?: $account_url); ?>"<?php echo $cta_target; ?>><?php esc_html_e('Start For Free', 'rap'); ?></a>
+            <div class="d-flex align-items-center gap-2 ms-lg-auto flex-shrink-0 order-3 codex-header-actions">
+                <a class="btn codex-start-btn codex-header-cta d-lg-none" href="<?php echo esc_url( home_url('/contact-us') ); ?>"><?php esc_html_e('Start For Free', 'rap'); ?></a>
                 <div class="codex-header-icons d-none d-lg-flex align-items-center gap-3">
                 <?php if(cz('tp_currency_switcher')){ ?>
                     <div class="codex-currency-switcher">
@@ -167,16 +174,9 @@
                 <div class="codex-cart-link">
                     <?php do_action('adstm_cart_quantity_link'); ?>
                 </div>
-                <a class="btn btn-primary codex-start-btn d-none d-lg-inline-flex" href="<?php echo esc_url($cta_link ?: $account_url); ?>"<?php echo $cta_target; ?>><?php esc_html_e('Start For Free', 'rap'); ?></a>
+                <a class="btn codex-start-btn codex-header-cta d-none d-lg-inline-flex" href="<?php echo esc_url( home_url('/contact-us') ); ?>"><?php esc_html_e('Start For Free', 'rap'); ?></a>
                 </div>
             </div>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#codexOffcanvas" aria-controls="codexOffcanvas" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rap' ); ?>">
-                <span class="navbar-toggler-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" focusable="false" role="presentation">
-                        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                    </svg>
-                </span>
-            </button>
         </div>
     </nav>
 </header>
