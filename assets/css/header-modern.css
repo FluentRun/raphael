@@ -40,8 +40,8 @@
 
 .codex-header .navbar,
 .codex-header-container {
-    min-height: var(--codex-header-height);
-    height: var(--codex-header-height);
+    min-height: 42px;
+    height: 42px;
 }
 
 .codex-header .container-xl {
