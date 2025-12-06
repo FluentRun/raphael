@@ -140,7 +140,7 @@
             <button class="navbar-toggler d-lg-none order-1" type="button" data-bs-toggle="offcanvas" data-bs-target="#codexOffcanvas" aria-controls="codexOffcanvas" aria-label="<?php esc_attr_e( 'Toggle navigation', 'rap' ); ?>">
                 <span class="navbar-toggler-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" focusable="false" role="presentation">
-                        <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        <path d="M5 7h14M5 12h14M5 17h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                     </svg>
                 </span>
             </button>
@@ -160,7 +160,7 @@
                 ?>
             </div>
             <div class="d-flex align-items-center gap-2 ms-lg-auto flex-shrink-0 order-3 codex-header-actions">
-                <a class="btn codex-start-btn codex-header-cta d-lg-none" href="<?php echo esc_url( home_url('/contact-us') ); ?>"><?php esc_html_e('Start For Free', 'rap'); ?></a>
+                <a class="btn btn-dark codex-start-btn codex-header-cta d-lg-none" href="<?php echo esc_url( home_url('/contact-us') ); ?>"><?php esc_html_e('Start For Free', 'rap'); ?></a>
                 <div class="codex-header-icons d-none d-lg-flex align-items-center gap-3">
                 <?php if(cz('tp_currency_switcher')){ ?>
                     <div class="codex-currency-switcher">
@@ -174,7 +174,7 @@
                 <div class="codex-cart-link">
                     <?php do_action('adstm_cart_quantity_link'); ?>
                 </div>
-                <a class="btn codex-start-btn codex-header-cta d-none d-lg-inline-flex" href="<?php echo esc_url( home_url('/contact-us') ); ?>"><?php esc_html_e('Start For Free', 'rap'); ?></a>
+                <a class="btn btn-dark codex-start-btn codex-header-cta d-none d-lg-inline-flex" href="<?php echo esc_url( home_url('/contact-us') ); ?>"><?php esc_html_e('Start For Free', 'rap'); ?></a>
                 </div>
             </div>
         </div>
